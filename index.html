@@ -1,0 +1,2714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muneeb Ali | Frontend Engineer (React & WordPress)</title>
+
+    <!-- Favicon (your photo) -->
+    <link rel="icon" href="./favicon/favicon.ico" type="image/jpg" />
+    <!-- Alternative favicon formats for better browser support -->
+    <link rel="icon" href="./favicon/favicon.ico" type="image/png" />
+    <link rel="apple-touch-icon" href="./favicon/favicon.ico" />
+
+    <!-- Tailwind CSS + Custom Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Custom Styles */
+      :root {
+        --primary: #3b82f6;
+        --primary-dark: #2563eb;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          #f8fafc 0%,
+          #f0f9ff 50%,
+          #ecfdf5 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse 15s infinite alternate;
+        z-index: 0;
+      }
+      @keyframes pulse {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(50px, 50px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
+      .btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+      }
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+      .btn-outline {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .btn-outline:hover {
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .header-transition {
+        transition: all 0.3s ease;
+      }
+      .header-scrolled {
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      #caseStudyModal {
+        transition: opacity 0.3s ease;
+      }
+
+      /* New Animation Styles */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scale-in {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+
+      .scale-in.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-in-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-in-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .rotate-in {
+        opacity: 0;
+        transform: rotate(-5deg);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+
+      .rotate-in.visible {
+        opacity: 1;
+        transform: rotate(0);
+      }
+
+      .flip-in {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(20deg);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      }
+
+      .flip-in.visible {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0);
+      }
+
+      .bounce-in {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: bounceIn 1s forwards;
+      }
+
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(-20px);
+        }
+        80% {
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .float-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .gradient-text-animation {
+        background-size: 200% auto;
+        animation: gradientText 5s ease infinite;
+      }
+
+      @keyframes gradientText {
+        0% {
+          background-position: 0% center;
+        }
+        50% {
+          background-position: 100% center;
+        }
+        100% {
+          background-position: 0% center;
+        }
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        }
+      }
+
+      .wave-animation {
+        position: relative;
+      }
+
+      .wave-animation::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+        animation: wave 2s linear infinite;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .glow-animation {
+        animation: glow 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px -5px #3b82f6;
+        }
+        to {
+          box-shadow: 0 0 10px 5px #3b82f6;
+        }
+      }
+
+      .typing-animation {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end);
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      /* Section specific animations */
+      .hero-title {
+        animation: slideInFromTop 1s ease-out both;
+      }
+
+      .hero-subtitle {
+        animation: slideInFromTop 1s ease-out 0.2s both;
+      }
+
+      .hero-description {
+        animation: slideInFromTop 1s ease-out 0.4s both;
+      }
+
+      .hero-buttons {
+        animation: slideInFromTop 1s ease-out 0.6s both;
+      }
+
+      @keyframes slideInFromTop {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Animation delays */
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+
+      .delay-600 {
+        animation-delay: 0.6s;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800">
+    <!-- Hero Section with Integrated Header -->
+    <section class="hero-section min-h-[540px]">
+      <!-- Initial Header (becomes fixed after scroll) -->
+      <div id="main-header" class="header-transition w-full z-50 relative">
+        <nav
+          class="container mx-auto px-6 py-4 flex justify-between items-center"
+        >
+          <a href="#" class="text-xl font-bold text-blue-600 fade-in">
+            Muneeb<span class="text-gray-800">Ali</span>
+          </a>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#about"
+              class="text-gray-600 px-1 md:px-0 hover:text-blue-600 transition fade-in delay-100"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-gray-600 px-1 md:px-0 hover:text-blue-600 transition fade-in delay-200"
+              >Skills</a
+            >
+            <a
+              href="#experience"
+              class="text-gray-600 px-1 md:px-0 hover:text-blue-600 transition fade-in delay-300"
+              >Experience</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-600 px-1 md:px-0 hover:text-blue-600 transition fade-in delay-400"
+              >Projects</a
+            >
+            <a
+              href="#testimonials"
+              class="text-gray-600 px-1 md:px-0 hover:text-blue-600 transition fade-in delay-500"
+              >Testimonials</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 px-1 md:px-0 hover:text-blue-600 transition fade-in delay-600"
+              >Contact</a
+            >
+          </div>
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-gray-600 fade-in delay-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Hero Content -->
+      <div
+        class="container mx-auto px-6 flex items-center justify-center min-h-[540px]"
+      >
+        <div class="hero-content max-w-2xl mx-auto text-center -mt-8">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 hero-title"
+          >
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 gradient-text-animation"
+            >
+              Muneeb Ali
+            </span>
+          </h1>
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6 hero-subtitle"
+          >
+            Frontend Engineer | React & WordPress Specialist
+          </h2>
+          <p class="text-lg text-gray-600 mb-8 hero-description">
+            I craft
+            <span class="font-medium text-blue-600 wave-animation"
+              >high-performance web apps</span
+            >
+            that boost engagement by 30-40%. With 3+ years of experience, I
+            blend design and code to solve real-world problems.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center hero-buttons"
+          >
+            <a
+              href="#projects"
+              class="btn btn-primary px-8 py-3 rounded-lg font-medium pulse-animation"
+            >
+              <i class="fas fa-code mr-2"></i>View My Work
+            </a>
+            <a
+              href="https://lnkd.in/d_J-t_7Q"
+              target="_blank"
+              class="btn btn-outline px-8 py-3 rounded-lg font-medium"
+            >
+              <i class="fas fa-file-alt mr-2"></i>Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div
+      id="video-modal"
+      class="modal hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+    >
+      <div
+        class="modal-content bg-white rounded-lg overflow-hidden w-full max-w-2xl relative"
+      >
+        <span
+          class="close-modal absolute top-4 right-4 text-white text-2xl cursor-pointer z-10"
+          >&times;</span
+        >
+        <iframe
+          id="intro-video"
+          class="w-full aspect-video"
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID?enablejsapi=1"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Scroll down indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce float-animation"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 text-blue-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+        />
+      </svg>
+    </div>
+
+    <!-- About Section - Elegant Redesign -->
+    <section id="about" class="py-24 bg-white">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <!-- Visual Element (Left) -->
+          <div class="lg:w-5/12 relative group scale-in">
+            <!-- Main Image Container -->
+            <div
+              class="relative rounded-3xl overflow-hidden aspect-square w-full h-auto"
+            >
+              <!-- Your Photo -->
+              <img
+                src="https://images.unsplash.com/photo-1641736494173-e7d5775121b2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Muneeb Ali"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <!-- Decorative Elements -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 mix-blend-overlay"
+              ></div>
+              <div
+                class="absolute -inset-4 border-2 border-blue-200/50 rounded-3xl transform rotate-2 z-[-1] group-hover:rotate-1 transition duration-500"
+              ></div>
+            </div>
+
+            <!-- Floating Tech Stack -->
+            <div
+              class="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 backdrop-blur-sm bounce-in"
+            >
+              <div class="flex space-x-3">
+                <div class="p-3 bg-blue-50 rounded-lg">
+                  <i class="fab fa-react text-blue-600 text-xl"></i>
+                </div>
+                <div class="p-3 bg-purple-50 rounded-lg">
+                  <i class="fab fa-wordpress text-purple-600 text-xl"></i>
+                </div>
+                <div class="p-3 bg-amber-50 rounded-lg">
+                  <i class="fab fa-js text-amber-600 text-xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content (Right) -->
+          <div class="lg:w-7/12 slide-in-right">
+            <div
+              class="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full mb-6 font-medium"
+            >
+              <i class="fas fa-user-tie mr-2"></i> Professional Profile
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Crafting Digital Experiences <br />
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 gradient-text-animation"
+                >That Drive Results</span
+              >
+            </h2>
+
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              I'm <span class="font-semibold text-gray-800">Muneeb Ali</span>, a
+              Frontend Engineer specializing in building high-performance web
+              applications. With over 3 years of experience in
+              <span class="text-blue-600 font-medium">React</span>,
+              <span class="text-blue-600 font-medium">TypeScript</span>, and
+              <span class="text-blue-600 font-medium">WordPress</span>, I
+              combine technical expertise with user-centric design to deliver
+              exceptional digital products.
+            </p>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+              <div class="bg-gray-50 p-4 rounded-xl fade-in delay-100">
+                <p class="text-3xl font-bold text-blue-600 mb-1">50+</p>
+                <p class="text-sm text-gray-500">Components Built</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-xl fade-in delay-200">
+                <p class="text-3xl font-bold text-blue-600 mb-1">30%</p>
+                <p class="text-sm text-gray-500">Performance Boost</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-xl fade-in delay-300">
+                <p class="text-3xl font-bold text-blue-600 mb-1">20%</p>
+                <p class="text-sm text-gray-500">Traffic Growth</p>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a
+              href="#contact"
+              class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300 group glow-animation"
+            >
+              Let's Build Something Great
+              <i
+                class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section - Redesigned -->
+    <section id="skills" class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block px-5 py-2 bg-blue-50 text-blue-600 rounded-full font-medium mb-4 fade-in"
+          >
+            <i class="fas fa-tools mr-2"></i> Technical Expertise
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in delay-100">
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 gradient-text-animation"
+              >Digital Toolbox</span
+            >
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in delay-200">
+            The technologies and methodologies I leverage to build exceptional
+            digital experiences
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Skill Card 1 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 flip-in"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fab fa-react text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">React Ecosystem</h3>
+            <p class="text-gray-600 mb-4">
+              Advanced knowledge of React, Next.js, and state management
+              solutions
+            </p>
+            <div class="flex items-center">
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-blue-500 to-blue-400 h-2 rounded-full"
+                  style="width: 90%"
+                ></div>
+              </div>
+              <span class="text-sm font-medium text-blue-600 ml-3">90%</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 flip-in delay-100"
+          >
+            <div
+              class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fab fa-wordpress text-purple-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">WordPress</h3>
+            <p class="text-gray-600 mb-4">
+              Custom theme development and performance optimization
+            </p>
+            <div class="flex items-center">
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full"
+                  style="width: 90%"
+                ></div>
+              </div>
+              <span class="text-sm font-medium text-purple-600 ml-3">90%</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 flip-in delay-200"
+          >
+            <div
+              class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fab fa-js text-amber-500 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">JavaScript/TypeScript</h3>
+            <p class="text-gray-600 mb-4">
+              Modern ES6+ features and type-safe development
+            </p>
+            <div class="flex items-center">
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-amber-500 to-amber-400 h-2 rounded-full"
+                  style="width: 92%"
+                ></div>
+              </div>
+              <span class="text-sm font-medium text-amber-600 ml-3">92%</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 flip-in delay-300"
+          >
+            <div
+              class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-code text-emerald-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">HTML/CSS</h3>
+            <p class="text-gray-600 mb-4">
+              Semantic markup and modern CSS techniques
+            </p>
+            <div class="flex items-center">
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-emerald-500 to-emerald-400 h-2 rounded-full"
+                  style="width: 98%"
+                ></div>
+              </div>
+              <span class="text-sm font-medium text-emerald-600 ml-3">98%</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 5 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 flip-in delay-400"
+          >
+            <div
+              class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-server text-red-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">API Integration</h3>
+            <p class="text-gray-600 mb-4">
+              API consumption and basic server-side knowledge
+            </p>
+            <div class="flex items-center">
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-red-500 to-red-400 h-2 rounded-full"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <span class="text-sm font-medium text-red-600 ml-3">100%</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 6 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 flip-in delay-500"
+          >
+            <div
+              class="w-14 h-14 bg-indigo-50 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Responsive Design</h3>
+            <p class="text-gray-600 mb-4">
+              Mobile-first development and cross-browser compatibility
+            </p>
+            <div class="flex items-center">
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-indigo-400 h-2 rounded-full"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <span class="text-sm font-medium text-indigo-600 ml-3">100%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Technologies -->
+        <div
+          class="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-200 rotate-in"
+        >
+          <h3 class="text-2xl font-bold mb-6 text-center">Also Work With</h3>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-100"
+            >
+              <i class="fab fa-git-alt text-gray-700 mr-2"></i>
+              <span>Git</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-200"
+            >
+              <i class="fas fa-wind text-blue-400 mr-2"></i>
+              <span>TailwindCSS</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-300"
+            >
+              <i class="fab fa-sass text-pink-600 mr-2"></i>
+              <span>Sass</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-400"
+            >
+              <i class="fab fa-figma text-purple-500 mr-2"></i>
+              <span>Figma</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-500"
+            >
+              <i class="fas fa-cogs text-orange-500 mr-2"></i>
+              <span>ACF</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-600"
+            >
+              <i class="fas fa-shopping-cart text-purple-700 mr-2"></i>
+              <span>WooCommerce</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-700"
+            >
+              <i class="fab fa-github text-gray-800 mr-2"></i>
+              <span>GitHub</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-800"
+            >
+              <i class="fas fa-database text-blue-500 mr-2"></i>
+              <span>Firebase</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-900"
+            >
+              <i class="fab fa-npm text-red-500 mr-2"></i>
+              <span>npm/yarn</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-1000"
+            >
+              <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+              <span>Vite</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-1100"
+            >
+              <i class="fab fa-jira text-blue-600 mr-2"></i>
+              <span>Jira/Trello</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-1200"
+            >
+              <i class="fas fa-database text-green-500 mr-2"></i>
+              <span>MongoDB</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-1300"
+            >
+              <i class="fab fa-adobe text-pink-700 mr-2"></i>
+              <span>Adobe XD</span>
+            </div>
+            <div
+              class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 fade-in delay-1400"
+            >
+              <i class="fas fa-vial text-purple-600 mr-2"></i>
+              <span>Jest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section - Redesigned -->
+    <section id="experience" class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block px-5 py-2 bg-blue-50 text-blue-600 rounded-full font-medium mb-4 fade-in"
+          >
+            <i class="fas fa-briefcase mr-2"></i> Professional Journey
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in delay-100">
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 gradient-text-animation"
+              >Work Experience</span
+            >
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in delay-200">
+            Key roles and contributions that shaped my development expertise
+          </p>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="relative max-w-3xl mx-auto">
+          <!-- Timeline line -->
+          <div
+            class="absolute left-1/2 w-0.5 h-full bg-gradient-to-b from-blue-200 to-purple-200 transform -translate-x-1/2"
+          ></div>
+
+          <!-- Current Role -->
+          <div class="mb-12 relative">
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Date Badge -->
+              <div
+                class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-1 md:order-1 slide-in-left"
+              >
+                <div
+                  class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                >
+                  <span class="mr-2">Oct 2023 - Present</span>
+                  <span
+                    class="px-2 py-0.5 bg-white text-blue-600 rounded-full text-xs font-bold"
+                    >Current</span
+                  >
+                </div>
+              </div>
+
+              <!-- Experience Card -->
+              <div class="md:w-1/2 md:pl-12 order-2 md:order-2 slide-in-right">
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 relative"
+                >
+                  <!-- Company Logo Placeholder -->
+                  <div
+                    class="absolute -top-4 -left-4 w-12 h-12 bg-white rounded-xl shadow-md border border-gray-200 flex items-center justify-center"
+                  >
+                    <div
+                      class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-code text-blue-600"></i>
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                    Senior Frontend Developer
+                  </h3>
+                  <p class="text-blue-600 font-medium mb-4">Codiffy</p>
+
+                  <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Built
+                        <strong class="text-gray-800"
+                          >50+ reusable React components</strong
+                        >
+                        improving efficiency by 40%
+                      </span>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Revamped
+                        <strong class="text-gray-800"
+                          >10+ WordPress sites</strong
+                        >
+                        with
+                        <strong class="text-gray-800">30% faster load</strong>
+                      </span>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Enhanced
+                        <strong class="text-gray-800">SEO and security</strong>
+                        measures, driving
+                        <strong class="text-gray-800">20% more traffic</strong>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Role -->
+          <div class="mb-12 relative">
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Experience Card -->
+              <div class="md:w-1/2 md:pr-12 order-2 md:order-1 slide-in-left">
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 relative"
+                >
+                  <!-- Company Logo Placeholder -->
+                  <div
+                    class="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-xl shadow-md border border-gray-200 flex items-center justify-center"
+                  >
+                    <div
+                      class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-laptop-code text-purple-600"></i>
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                    Frontend Developer
+                  </h3>
+                  <p class="text-purple-600 font-medium mb-4">
+                    Diligent Technologies
+                  </p>
+
+                  <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Developed
+                        <strong class="text-gray-800"
+                          >school management app</strong
+                        >
+                        with React/Electron
+                      </span>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Achieved
+                        <strong class="text-gray-800"
+                          >40% faster load times</strong
+                        >
+                        through optimization
+                      </span>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Designed
+                        <strong class="text-gray-800"
+                          >custom WordPress themes</strong
+                        >
+                        with Elementor
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Date Badge -->
+              <div
+                class="md:w-1/2 md:pl-12 mb-6 md:mb-0 order-1 md:order-2 slide-in-right"
+              >
+                <div
+                  class="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+                >
+                  Nov 2022 - Sep 2023
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Role -->
+          <div class="relative">
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Date Badge -->
+              <div
+                class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-1 md:order-1 slide-in-left"
+              >
+                <div
+                  class="inline-flex items-center px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium"
+                >
+                  Jan 2022 - Oct 2022
+                </div>
+              </div>
+
+              <!-- Experience Card -->
+              <div class="md:w-1/2 md:pl-12 order-2 md:order-2 slide-in-right">
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 relative"
+                >
+                  <!-- Company Logo Placeholder -->
+                  <div
+                    class="absolute -top-4 -left-4 w-12 h-12 bg-white rounded-xl shadow-md border border-gray-200 flex items-center justify-center"
+                  >
+                    <div
+                      class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-mobile-alt text-amber-600"></i>
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">
+                    Frontend Developer
+                  </h3>
+                  <p class="text-amber-600 font-medium mb-4">GeeksHub</p>
+
+                  <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Optimized
+                        <strong class="text-gray-800"
+                          >15+ frontend components</strong
+                        >
+                        improving performance by 35%
+                      </span>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Boosted team productivity by
+                        <strong class="text-gray-800">20%</strong> using React
+                        Hooks patterns
+                      </span>
+                    </li>
+                    <li class="flex items-start">
+                      <div class="flex-shrink-0 mt-1">
+                        <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                      </div>
+                      <span class="ml-3 text-sm">
+                        Improved
+                        <strong class="text-gray-800"
+                          >cross-browser compatibility</strong
+                        >
+                        for 15+ components
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section - Redesigned with Distinct Colors -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block px-5 py-2 bg-blue-50 text-blue-600 rounded-full font-medium mb-4 fade-in"
+          >
+            <i class="fas fa-code-branch mr-2"></i> Portfolio Showcase
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in delay-100">
+            Featured
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 gradient-text-animation"
+              >Projects</span
+            >
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in delay-200">
+            Impactful solutions that demonstrate my technical expertise and
+            problem-solving approach
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 (Blue) -->
+          <div
+            class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col fade-in"
+          >
+            <!-- Project Card Content (unchanged) -->
+            <div
+              class="h-48 bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+              ></div>
+              <span class="text-white text-2xl font-bold relative z-10"
+                >ERP System</span
+              >
+              <div class="absolute bottom-4 right-4">
+                <span
+                  class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                  >Enterprise Solution</span
+                >
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col">
+              <div class="flex-grow">
+                <h3 class="font-bold text-xl mb-3 text-gray-800">
+                  Warehouse Management
+                </h3>
+                <p class="text-gray-600 mb-5">
+                  Real-time inventory tracking system reducing operational
+                  errors by 30% and improving fulfillment speed.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-react text-blue-600 mr-1"></i> React
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-cubes text-blue-600 mr-1"></i> Redux
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-list-alt text-blue-600 mr-1"></i> Formik
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-check-circle text-blue-600 mr-1"></i> Yup
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-table text-blue-600 mr-1"></i> Reactstrap
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-project-diagram text-blue-600 mr-1"></i>
+                    Context API
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-gray-100 pt-4"
+              >
+                <button
+                  onclick="openCaseStudyModal()"
+                  class="text-blue-600 font-medium hover:text-blue-800 transition-colors flex items-center group cursor-pointer"
+                >
+                  Case Study
+                  <i
+                    class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </button>
+                <!-- <a
+                  href="#"
+                  class="text-gray-500 hover:text-blue-600 transition-colors"
+                >
+                  <i class="fab fa-github text-lg"></i>
+                </a> -->
+              </div>
+            </div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            ></div>
+          </div>
+
+          <!-- Case Study Modal -->
+          <div
+            id="caseStudyModal"
+            class="fixed inset-0 z-50 hidden overflow-y-auto"
+          >
+            <div
+              class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+            >
+              <!-- Background overlay -->
+              <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
+              </div>
+
+              <!-- Modal content -->
+              <div
+                class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full"
+              >
+                <div class="bg-white px-6 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <div class="sm:flex sm:items-start">
+                    <div
+                      class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full"
+                    >
+                      <div class="flex justify-between items-start">
+                        <h3
+                          class="text-2xl leading-6 font-bold text-gray-900 mb-4"
+                        >
+                          Warehouse Management Case Study
+                        </h3>
+                        <button
+                          onclick="closeModal()"
+                          class="text-gray-400 hover:text-gray-500"
+                        >
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+
+                      <div class="mt-4 space-y-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                          <h4 class="font-semibold text-lg text-blue-600 mb-2">
+                            Challenge
+                          </h4>
+                          <p class="text-gray-700">
+                            The client needed to modernize their legacy
+                            warehouse system that was causing 15% inventory
+                            discrepancies and slow order processing times.
+                          </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                          <h4 class="font-semibold text-lg text-blue-600 mb-2">
+                            Solution
+                          </h4>
+                          <p class="text-gray-700">
+                            We developed a real-time inventory tracking system
+                            with:
+                          </p>
+                          <ul
+                            class="list-disc pl-5 mt-2 space-y-1 text-gray-700"
+                          >
+                            <li>Barcode scanning integration</li>
+                            <li>Automated inventory alerts</li>
+                            <li>Dashboard with KPIs</li>
+                            <li>Mobile-friendly interface</li>
+                          </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                          <h4 class="font-semibold text-lg text-blue-600 mb-2">
+                            Results
+                          </h4>
+                          <div class="grid grid-cols-2 gap-4 mt-2">
+                            <div
+                              class="bg-white p-3 rounded-lg shadow-sm border border-gray-100"
+                            >
+                              <p class="text-sm text-gray-500">
+                                Inventory Accuracy
+                              </p>
+                              <p class="text-2xl font-bold text-blue-600">
+                                99.2%
+                              </p>
+                            </div>
+                            <div
+                              class="bg-white p-3 rounded-lg shadow-sm border border-gray-100"
+                            >
+                              <p class="text-sm text-gray-500">
+                                Order Processing
+                              </p>
+                              <p class="text-2xl font-bold text-blue-600">
+                                3.2x faster
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"
+                >
+                  <button
+                    type="button"
+                    onclick="closeModal()"
+                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
+                  >
+                    Close Case Study
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 (Teal) -->
+          <div
+            class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col fade-in delay-100"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-teal-600 to-teal-400 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+              ></div>
+              <span class="text-white text-2xl font-bold relative z-10"
+                >AdmitPath</span
+              >
+              <div class="absolute bottom-4 right-4">
+                <span
+                  class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                  >EdTech Platform</span
+                >
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col">
+              <div class="flex-grow">
+                <h3 class="font-bold text-xl mb-3 text-gray-800">
+                  Education Platform
+                </h3>
+                <p class="text-gray-600 mb-5">
+                  Comprehensive learning management system with role-based
+                  dashboards and real-time Zoom integration.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-react text-teal-600 mr-1"></i> Next.js
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-code text-teal-600 mr-1"></i> TypeScript
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-database text-teal-600 mr-1"></i> Zustand
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-video text-teal-600 mr-1.5"></i> Zoom API
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-comment-dots text-teal-600 mr-1"></i>
+                    Pusher
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-wind text-teal-600 mr-1"></i> Tailwind CSS
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-gray-100 pt-4"
+              >
+                <a
+                  href="https://admit-path.com/"
+                  class="text-teal-600 font-medium hover:text-teal-800 transition-colors flex items-center group"
+                  target="_blank"
+                >
+                  View Live Site
+                  <i
+                    class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </a>
+                <!-- <a
+                  href="#"
+                  class="text-gray-500 hover:text-teal-600 transition-colors"
+                >
+                  <i class="fab fa-github text-lg"></i>
+                </a> -->
+              </div>
+            </div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-teal-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            ></div>
+          </div>
+
+          <!-- Project 3 - Westward360 (Amber) -->
+          <div
+            class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col border border-gray-100 fade-in delay-200"
+          >
+            <!-- Header -->
+            <div
+              class="h-48 bg-gradient-to-br from-amber-600 to-amber-400 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+              ></div>
+              <span
+                class="text-white text-2xl font-bold relative z-10 drop-shadow-md"
+                >Westward360</span
+              >
+              <div class="absolute bottom-4 right-4">
+                <span
+                  class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full border border-white/30"
+                >
+                  <i class="fas fa-building mr-1"></i> Real Estate
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 bg-white flex-grow flex flex-col">
+              <div class="flex-grow">
+                <h3 class="font-bold text-xl mb-3 text-gray-800">
+                  Property Management System
+                </h3>
+                <p class="text-gray-600 mb-5">
+                  Full-service real estate management company handling rentals,
+                  maintenance, and tenant relations for property owners.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-wordpress text-amber-600 mr-1.5"></i>
+                    WordPress
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-paint-brush text-amber-600 mr-1.5"></i>
+                    Custom Theme
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-sliders-h text-amber-600 mr-1.5"></i>
+                    ACF Pro
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-php text-amber-600 mr-1.5"></i>
+                    PHP
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-js-square text-amber-600 mr-1.5"></i>
+                    jQuery
+                  </span>
+                </div>
+              </div>
+
+              <!-- Footer Links -->
+              <div
+                class="flex justify-between items-center border-t border-gray-100 pt-4"
+              >
+                <a
+                  href="https://westward360.com/"
+                  class="text-amber-600 font-medium hover:text-amber-800 transition-colors flex items-center group"
+                  target="_blank"
+                >
+                  View Live Site
+                  <i
+                    class="fas fa-external-link-alt ml-2 text-xs group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </a>
+                <!-- <div class="flex space-x-3">
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-amber-600 transition-colors"
+                    aria-label="Case Study"
+                  >
+                    <i class="fas fa-file-alt"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-amber-600 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div> -->
+              </div>
+            </div>
+
+            <!-- Hover Effect -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-amber-600/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            ></div>
+          </div>
+
+          <!-- Project 4 - DirectfitnessSolutions-->
+          <div
+            class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col fade-in delay-300"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-indigo-600 to-indigo-400 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+              ></div>
+              <span class="text-white text-2xl font-bold relative z-10"
+                >Direct Fitness</span
+              >
+              <div class="absolute bottom-4 right-4">
+                <span
+                  class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                  >Ecommerce Platform</span
+                >
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col">
+              <div class="flex-grow">
+                <h3 class="font-bold text-xl mb-3 text-gray-800">
+                  Fitness Equipment Distribution
+                </h3>
+                <p class="text-gray-600 mb-5">
+                  WordPress ecommerce platform with WooCommerce integration, PDF
+                  generation, and SEO optimization.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-wordpress text-indigo-600 mr-1"></i>
+                    Custom WordPress
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-cart-plus text-indigo-600 mr-1"></i>
+                    WooCommerce
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-search text-indigo-600 mr-1"></i> Yoast SEO
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-js text-indigo-600 mr-1"></i> jQuery
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-shield-alt text-indigo-600 mr-1"></i>
+                    Wordfence
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-gray-100 pt-4"
+              >
+                <a
+                  href="https://directfitnesssolutions.com/"
+                  class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center group"
+                  target="_blank"
+                >
+                  View Live Site
+                  <i
+                    class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-indigo-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            ></div>
+          </div>
+
+          <!-- project 5 - Wowconstruction -->
+          <div
+            class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col fade-in delay-400"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-emerald-600 to-emerald-400 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+              ></div>
+              <span class="text-white text-2xl font-bold relative z-10"
+                >Wow Construction</span
+              >
+              <div class="absolute bottom-4 right-4">
+                <span
+                  class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                  >Construction Website</span
+                >
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col">
+              <div class="flex-grow">
+                <h3 class="font-bold text-xl mb-3 text-gray-800">
+                  Construction Services
+                </h3>
+                <p class="text-gray-600 mb-5">
+                  Elementor-built website with animated interactions, project
+                  sliders, and lead generation features.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-cubes text-emerald-600 mr-1"></i> Elementor
+                    Pro
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-sliders-h text-emerald-600 mr-1"></i>
+                    Interactive Sliders
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-mobile-alt text-emerald-600 mr-1"></i>
+                    Mobile Optimized
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-anchor text-emerald-600 mr-1"></i> Sticky
+                    Forms
+                  </span>
+                  <!-- <span
+                    class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-phone-alt text-emerald-600 mr-1"></i>
+                    Click-to-Call
+                  </span> -->
+                </div>
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-gray-100 pt-4"
+              >
+                <a
+                  href="https://wowconstruction.co.uk/"
+                  class="text-emerald-600 font-medium hover:text-emerald-800 transition-colors flex items-center group"
+                  target="_blank"
+                >
+                  View Live Site
+                  <i
+                    class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            ></div>
+          </div>
+
+          <!-- project 6 - pairtime -->
+          <div
+            class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col fade-in delay-500"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-violet-600 to-violet-400 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+              ></div>
+              <span class="text-white text-2xl font-bold relative z-10"
+                >PairTime</span
+              >
+              <div class="absolute bottom-4 right-4">
+                <span
+                  class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                  >Problem-Solving Marketplace</span
+                >
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col">
+              <div class="flex-grow">
+                <h3 class="font-bold text-xl mb-3 text-gray-800">
+                  Knowledge Sharing Platform
+                </h3>
+                <p class="text-gray-600 mb-5">
+                  Innovative marketplace connecting problem-solvers with those
+                  needing help. Features user profiles, live requests, etc.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-violet-50 text-violet-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-html5 text-violet-600 mr-1"></i> HTML
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-violet-50 text-violet-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-wind text-violet-600 mr-1"></i> Tailwind
+                    CSS
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-violet-50 text-violet-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-js text-violet-600 mr-1"></i> JavaScript
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-violet-50 text-violet-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fas fa-bolt text-violet-600 mr-1"></i> Vite
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-violet-50 text-violet-700 text-xs font-medium rounded-full flex items-center"
+                  >
+                    <i class="fab fa-git-alt text-violet-600 mr-1"></i> Git
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-gray-100 pt-4"
+              >
+                <a
+                  href="https://pairtime.netlify.app/"
+                  class="text-violet-600 font-medium hover:text-violet-800 transition-colors flex items-center group"
+                  target="_blank"
+                >
+                  View Live Site
+                  <i
+                    class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </a>
+                <!-- <a
+                  href="#"
+                  class="text-gray-500 hover:text-violet-600 transition-colors"
+                >
+                  <i class="fab fa-github text-lg"></i>
+                </a> -->
+              </div>
+            </div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            ></div>
+          </div>
+        </div>
+
+        <!-- View All Button -->
+
+        <div class="text-center mt-16">
+          <a
+            href="#contact"
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300 group glow-animation"
+          >
+            Let's Build Projects
+            <i
+              class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block px-5 py-2 bg-blue-50 text-blue-600 rounded-full font-medium mb-4 fade-in"
+          >
+            <i class="fas fa-comment-dots mr-2"></i> Client Feedback
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in delay-100">
+            What
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 gradient-text-animation"
+              >Clients Say</span
+            >
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in delay-200">
+            Trusted by teams and businesses I've collaborated with to deliver
+            exceptional results
+          </p>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="relative max-w-4xl mx-auto overflow-hidden">
+          <!-- Carousel Track -->
+          <div
+            id="testimonial-track"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            <!-- Testimonial 1 -->
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+              <div
+                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+              >
+                <i
+                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                ></i>
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
+                  >
+                    <img src="./client-3.jpg" alt="Client" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">Muhammad Haroon</h4>
+                    <p class="text-gray-500">FOUNDER / CEO - Codiffy</p>
+                  </div>
+                </div>
+                <div class="text-gray-600 mb-6 relative z-10 flex-1">
+                  <p class="italic">
+                    "Muneeb is an outstanding frontend developer who
+                    consistently delivers high-quality work. He's reliable,
+                    detail-oriented, and proactive — a true asset to any team,
+                    always exceeding expectations and contributing significantly
+                    to project success and user experience."
+                  </p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-600 text-xs rounded-full"
+                    >Technical Excellence</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+              <div
+                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+              >
+                <i
+                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                ></i>
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
+                  >
+                    HW
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">Haoran Wan</h4>
+                    <p class="text-gray-500">Upwork Client</p>
+                  </div>
+                </div>
+                <div class="text-gray-600 mb-6 relative z-10 flex-1">
+                  <p class="italic">
+                    "Muneeb is a skilled freelancer on the task at hand. Muneeb
+                    was very respectful and had great communication throughout
+                    the project. It was a great experience working with him"
+                  </p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-600 text-xs rounded-full"
+                    >Productivity App</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+              <div
+                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+              >
+                <i
+                  class="fas fa-quote-right text-purple-100 text-6xl absolute top-4 right-6"
+                ></i>
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-purple-500 to-purple-300 flex items-center justify-center text-white font-bold text-xl mr-4"
+                  >
+                    <img src="./client-1.jpg" alt="Client" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">Absaar Malik</h4>
+                    <p class="text-gray-500">
+                      Co-founder @ AdmitPath | Yale-NUS
+                    </p>
+                  </div>
+                </div>
+                <div class="text-gray-600 mb-6 relative z-10 flex-1">
+                  <p class="italic">
+                    "Muneeb is a very skilled developer who has helped us
+                    develop a complex product within weeks - as per our
+                    deadline. His speed, precision, and effective communication
+                    is highly commendable. He always go an extra mile to leave
+                    behind an important in whatever work he do!"
+                  </p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-purple-50 text-purple-600 text-xs rounded-full"
+                    >EdTech Platform</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+              <div
+                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+              >
+                <i
+                  class="fas fa-quote-right text-blue-100 text-6xl absolute top-4 right-6"
+                ></i>
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-blue-300 flex items-center justify-center text-white font-bold text-xl mr-4"
+                  >
+                    MA
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">Muhammad Akmal</h4>
+                    <p class="text-gray-500">
+                      Senior ERP Developer - PreciseTec
+                    </p>
+                  </div>
+                </div>
+                <div class="text-gray-600 mb-6 relative z-10 flex-1">
+                  <p class="italic">
+                    "Muneeb was instrumental in building our Warehouse ERP's
+                    frontend, delivering a 30% faster interface through
+                    optimized React components. His real-time inventory
+                    dashboard reduced user errors by 25% while improving
+                    workflow efficiency. A rare blend of technical skill and
+                    user-focused design thinking."
+                  </p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-blue-50 text-blue-600 text-xs rounded-full"
+                    >ERP System Project</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+              <div
+                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+              >
+                <i
+                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                ></i>
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
+                  >
+                    RM
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">Rakesh Murugan</h4>
+                    <p class="text-gray-500">Upwork Client</p>
+                  </div>
+                </div>
+                <div class="text-gray-600 mb-6 relative z-10 flex-1">
+                  <p class="italic">"Easy to work with, Recommended."</p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-600 text-xs rounded-full"
+                    >Proof-of-Concept Code</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+              <div
+                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+              >
+                <i
+                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                ></i>
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
+                  >
+                    <img src="./client-2.jpg" alt="Client" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">Mohamed Karkotly</h4>
+                    <p class="text-gray-500">
+                      Senior Software Developer at CHECK24
+                    </p>
+                  </div>
+                </div>
+                <div class="text-gray-600 mb-6 relative z-10 flex-1">
+                  <p class="italic">
+                    "I coached Muneeb in frontend development. He is a quick
+                    learner, asks smart questions, and applies feedback well. He
+                    will be a great addition to any team."
+                  </p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-teal-50 text-teal-600 text-xs rounded-full"
+                    >Mentorship</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic dots container -->
+        <div id="testimonial-dots" class="flex justify-center mt-8 space-x-2">
+          <!-- Dots will be inserted here by JavaScript -->
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-16">
+          <a
+            href="#contact"
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300 group glow-animation"
+          >
+            Ready to work together?
+            <i
+              class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section - Redesigned -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block px-5 py-2 bg-blue-50 text-blue-600 rounded-full font-medium mb-4 fade-in"
+          >
+            <i class="fas fa-paper-plane mr-2"></i> Let's Connect
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in delay-100">
+            Get In
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 gradient-text-animation"
+              >Touch</span
+            >
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in delay-200">
+            Have a project in mind or want to discuss opportunities? I'd love to
+            hear from you!
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <!-- Contact Form -->
+          <div
+            class="bg-white px-6 py-10 md:p-10 rounded-2xl shadow-lg border border-gray-100 fade-in"
+          >
+            <h3 class="text-2xl font-bold mb-8 text-gray-800">
+              Send Me a Message
+            </h3>
+            <form id="contact-form" class="space-y-6" netlify name="contact">
+              <input type="hidden" name="form-name" value="contact" />
+
+              <div class="relative">
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent peer"
+                  placeholder=" "
+                  name="name"
+                />
+                <label
+                  for="name"
+                  class="absolute left-5 top-4 text-gray-500 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-600 bg-white px-2 -top-2 text-sm"
+                >
+                  Your Name
+                </label>
+              </div>
+
+              <div class="relative">
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent peer"
+                  placeholder=" "
+                  name="email"
+                />
+                <label
+                  for="email"
+                  class="absolute left-5 top-4 text-gray-500 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-600 bg-white px-2 -top-2 text-sm"
+                >
+                  Email Address
+                </label>
+              </div>
+
+              <div class="relative">
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent peer"
+                  placeholder=" "
+                  name="message"
+                ></textarea>
+                <label
+                  for="message"
+                  class="absolute left-5 top-4 text-gray-500 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-blue-600 bg-white px-2 -top-2 text-sm"
+                >
+                  Your Message
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white py-4 px-6 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center pulse-animation"
+              >
+                <i class="fas fa-paper-plane mr-3"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="space-y-8 slide-in-right">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-gray-800">
+                Contact Information
+              </h3>
+              <p class="text-gray-600 mb-8">
+                Feel free to reach out through any of these channels. I
+                typically respond within 24 hours.
+              </p>
+            </div>
+
+            <div class="space-y-6">
+              <!-- Email -->
+              <div
+                class="flex items-start p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <div class="bg-blue-100 p-4 rounded-xl mr-5 flex-shrink-0">
+                  <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-1">Email</h4>
+
+                  <a
+                    href="mailto:muneebali500@gmail.com"
+                    class="text-gray-600 hover:text-blue-600 transition-colors break-all"
+                    aria-label="Send an email to muneebali500@gmail.com"
+                  >
+                    muneebali500@gmail.com
+                  </a>
+
+                  <p class="text-sm text-gray-500 mt-1">
+                    Fastest response time
+                  </p>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div
+                class="flex items-start p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <div class="bg-blue-100 p-4 rounded-xl mr-5 flex-shrink-0">
+                  <i class="fab fa-linkedin-in text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-1">LinkedIn</h4>
+                  <a
+                    href="https://www.linkedin.com/in/muneeb-ali-56507121a/"
+                    class="text-gray-600 hover:text-blue-600 transition-colors break-all"
+                    target="_blank"
+                  >
+                    https://www.linkedin.com/in/muneeb-ali-56507121a/
+                  </a>
+                  <p class="text-sm text-gray-500 mt-1">
+                    Let's connect professionally
+                  </p>
+                </div>
+              </div>
+
+              <!-- GitHub -->
+              <div
+                class="flex items-start p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <div class="bg-blue-100 p-4 rounded-xl mr-5 flex-shrink-0">
+                  <i class="fab fa-github text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-1">GitHub</h4>
+                  <a
+                    href="https://github.com/muneebali500"
+                    class="text-gray-600 hover:text-blue-600 transition-colors break-all"
+                    target="_blank"
+                  >
+                    https://github.com/muneebali500
+                  </a>
+                  <p class="text-sm text-gray-500 mt-1">Check out my work</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer - Redesigned -->
+    <footer class="bg-gray-900 text-white pt-16 pb-12">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="grid md:grid-cols-3 gap-10 mb-12 text-center md:text-left">
+          <!-- Column 1 -->
+          <div class="fade-in">
+            <h3 class="text-xl font-bold mb-4 text-white">Muneeb Ali</h3>
+            <p class="text-gray-400 mb-4 max-w-[220px] mx-auto md:mx-0">
+              Frontend Engineer creating exceptional digital experiences.
+            </p>
+            <div class="flex space-x-4 justify-center md:justify-start">
+              <a
+                href="https://github.com/muneebali500"
+                class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/muneeb-ali-56507121a/"
+                class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="md:mx-auto fade-in delay-100">
+            <h4 class="text-lg font-semibold mb-4 text-white">Navigation</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Projects</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="md:ml-auto fade-in delay-200">
+            <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+            <ul class="space-y-3">
+              <li
+                class="flex items-center justify-center md:items-start md:justify-start"
+              >
+                <i class="fas fa-envelope text-gray-400 mr-3 mt-1"></i>
+                <a
+                  href="mailto:muneebali500@gmail.com"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >muneebali500@gmail.com</a
+                >
+              </li>
+              <li
+                class="flex items-center justify-center md:items-start md:justify-start"
+              >
+                <i class="fas fa-map-marker-alt text-gray-400 mr-3 mt-1"></i>
+                <span class="text-gray-400">Hyderabad, Pakistan</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-800 fade-in delay-300">
+          <div class="flex justify-center">
+            <p class="text-gray-400 mb-4 md:mb-0">
+              © 2025 Muneeb Ali. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function openCaseStudyModal() {
+        const modal = document.getElementById("caseStudyModal");
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeModal() {
+        console.log("close moal");
+        const modal = document.getElementById("caseStudyModal");
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+      }
+
+      // Close modal when clicking outside content
+      window.onclick = function (event) {
+        const modal = document.getElementById("caseStudyModal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      };
+    </script>
+
+    <script>
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation classes
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".scale-in")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".slide-in-left")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".slide-in-right")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".rotate-in")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".flip-in")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".bounce-in")
+        .forEach((el) => observer.observe(el));
+
+      // Header scroll effect
+      const header = document.getElementById("main-header");
+      const heroSection = document.querySelector(".hero-section");
+      const heroHeight = heroSection.offsetHeight;
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > heroHeight * 0.2) {
+          header.classList.remove("relative");
+          header.classList.add("fixed", "top-0", "header-scrolled");
+          heroSection.style.paddingTop = `${header.offsetHeight}px`;
+        } else {
+          header.classList.add("relative");
+          header.classList.remove("fixed", "top-0", "header-scrolled");
+          heroSection.style.paddingTop = "0";
+        }
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-button");
+      const navMenu = document.querySelector("nav .hidden.md\\:flex");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("hidden");
+        navMenu.classList.toggle("flex");
+        navMenu.classList.toggle("absolute");
+        navMenu.classList.toggle("top-full");
+        navMenu.classList.toggle("left-0");
+        navMenu.classList.toggle("right-0");
+        navMenu.classList.toggle("bg-white");
+        navMenu.classList.toggle("shadow-md");
+        navMenu.classList.toggle("p-4");
+        navMenu.classList.toggle("flex-col");
+        navMenu.classList.toggle("space-y-4");
+        navMenu.classList.toggle("space-x-0");
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Color palette for testimonials
+        const colorPalette = [
+          {
+            bg: "from-blue-500 to-blue-300",
+            text: "text-blue-600",
+            bgLight: "bg-blue-50",
+            quote: "text-blue-100",
+          },
+          {
+            bg: "from-teal-500 to-teal-300",
+            text: "text-teal-600",
+            bgLight: "bg-teal-50",
+            quote: "text-teal-100",
+          },
+          {
+            bg: "from-purple-500 to-purple-300",
+            text: "text-purple-600",
+            bgLight: "bg-purple-50",
+            quote: "text-purple-100",
+          },
+          {
+            bg: "from-amber-500 to-amber-300",
+            text: "text-amber-600",
+            bgLight: "bg-amber-50",
+            quote: "text-amber-100",
+          },
+          {
+            bg: "from-indigo-500 to-indigo-300",
+            text: "text-indigo-600",
+            bgLight: "bg-indigo-50",
+            quote: "text-indigo-100",
+          },
+        ];
+
+        const track = document.getElementById("testimonial-track");
+        const dotsContainer = document.getElementById("testimonial-dots");
+        const testimonials = document.querySelectorAll(".w-full.md\\:w-1\\/2");
+        let currentIndex = 0;
+        let cardWidth = testimonials[0].offsetWidth;
+        const visibleTestimonials = 2;
+        let isReversed = false;
+        let autoScrollInterval;
+
+        // Apply dynamic colors to testimonials
+        function applyTestimonialColors() {
+          testimonials.forEach((testimonial, index) => {
+            const colorIndex = index % colorPalette.length;
+            const colors = colorPalette[colorIndex];
+
+            // Update avatar gradient
+            const avatar = testimonial.querySelector(".rounded-full");
+            avatar.className = avatar.className.replace(
+              /from-\w+-\d+ to-\w+-\d+/,
+              colors.bg
+            );
+
+            // Update project tag
+            const projectTag = testimonial.querySelector(
+              ".text-xs.rounded-full"
+            );
+            projectTag.classList.remove(
+              "bg-blue-50",
+              "text-blue-600",
+              "bg-purple-50",
+              "text-purple-600",
+              "bg-teal-50",
+              "text-teal-600"
+            );
+            projectTag.classList.add(colors.bgLight, colors.text);
+
+            // Update quote icon
+            const quoteIcon = testimonial.querySelector(".fa-quote-right");
+            quoteIcon.classList.remove(
+              "text-blue-100",
+              "text-purple-100",
+              "text-teal-100",
+              "text-amber-100"
+            );
+            quoteIcon.classList.add(colors.quote);
+          });
+        }
+
+        // Calculate number of dots needed
+        const dotCount = Math.max(
+          1,
+          testimonials.length - visibleTestimonials + 1
+        );
+
+        // Create dots dynamically
+        function createDots() {
+          dotsContainer.innerHTML = "";
+
+          for (let i = 0; i < dotCount; i++) {
+            const dot = document.createElement("button");
+            dot.className = `testimonial-dot w-3 h-3 rounded-full focus:outline-none ${
+              i === 0 ? "bg-blue-600" : "bg-gray-300"
+            }`;
+            dot.dataset.index = i;
+            dotsContainer.appendChild(dot);
+          }
+        }
+
+        function updateCarousel() {
+          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+          updateDots();
+        }
+
+        function updateDots() {
+          const dots = document.querySelectorAll(".testimonial-dot");
+          const activeDotIndex = Math.min(currentIndex, dotCount - 1);
+
+          dots.forEach((dot, index) => {
+            dot.classList.toggle("bg-blue-600", index === activeDotIndex);
+            dot.classList.toggle("bg-gray-300", index !== activeDotIndex);
+          });
+        }
+
+        function moveNext() {
+          if (!isReversed) {
+            if (currentIndex >= testimonials.length - visibleTestimonials) {
+              isReversed = true;
+              currentIndex--;
+            } else {
+              currentIndex++;
+            }
+          } else {
+            if (currentIndex <= 0) {
+              isReversed = false;
+              currentIndex++;
+            } else {
+              currentIndex--;
+            }
+          }
+          updateCarousel();
+        }
+
+        function handleDotClick(e) {
+          if (e.target.classList.contains("testimonial-dot")) {
+            currentIndex = parseInt(e.target.dataset.index);
+            isReversed = false;
+            updateCarousel();
+            resetAutoScroll();
+          }
+        }
+
+        function startAutoScroll() {
+          autoScrollInterval = setInterval(moveNext, 5000);
+        }
+
+        function resetAutoScroll() {
+          clearInterval(autoScrollInterval);
+          startAutoScroll();
+        }
+
+        // Initialize
+        applyTestimonialColors();
+        createDots();
+        updateCarousel();
+        startAutoScroll();
+
+        // Event delegation for dots
+        dotsContainer.addEventListener("click", handleDotClick);
+
+        // Pause on hover
+        track.addEventListener("mouseenter", () => {
+          clearInterval(autoScrollInterval);
+        });
+
+        track.addEventListener("mouseleave", () => {
+          startAutoScroll();
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", () => {
+          cardWidth = testimonials[0].offsetWidth;
+          updateCarousel();
+        });
+      });
+    </script>
+  </body>
+</html>
