@@ -2442,12 +2442,19 @@
         <div class="pt-8 border-t border-gray-800 fade-in delay-300">
           <div class="flex justify-center">
             <p class="text-gray-400 mb-4 md:mb-0">
-              © 2025 Muneeb Ali. All rights reserved.
+              © <span id="year"></span> Muneeb Ali. All rights reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
+
+    <script>
+      const yearEl = document.getElementById("year");
+      const curDate = new Date();
+
+      yearEl.textContent = curDate.getFullYear();
+    </script>
 
     <script>
       function openCaseStudyModal() {
