@@ -353,6 +353,10 @@
       .delay-600 {
         animation-delay: 0.6s;
       }
+
+      section {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body class="font-sans antialiased text-gray-800">
@@ -511,7 +515,7 @@
     </div>
 
     <!-- About Section - Elegant Redesign -->
-    <section id="about" class="py-24 bg-white">
+    <section id="about" class="py-12 md:py-24 bg-white">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="flex flex-col lg:flex-row items-center gap-16">
           <!-- Visual Element (Left) -->
@@ -645,7 +649,7 @@
     </section>
 
     <!-- Skills Section - Redesigned -->
-    <section id="skills" class="py-20 bg-white">
+    <section id="skills" class="py-12 md:py-20 bg-white">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="text-center mb-16">
           <span
@@ -909,13 +913,13 @@
     </section>
 
     <!-- Work Experience Section - Redesigned -->
-    <section id="experience" class="py-20 bg-white">
+    <section id="experience" class="py-12 md:py-20 bg-white overflow-hidden">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="text-center mb-16">
           <span
             class="inline-block px-5 py-2 bg-blue-50 text-blue-600 rounded-full font-medium mb-4 fade-in"
           >
-            <i class="fas fa-briefcase mr-2"></i> Professional Journey
+            <i class="fas fa-briefcase mr-2"></i> Professional Experience
           </span>
           <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in delay-100">
             My
@@ -1192,7 +1196,7 @@
     </section>
 
     <!-- Projects Section - Redesigned with Distinct Colors -->
-    <section id="projects" class="py-20 bg-white">
+    <section id="projects" class="py-12 md:py-20 bg-white">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="text-center mb-16">
           <span
@@ -1906,7 +1910,7 @@
       </div>
     </section>
 
-    <section id="testimonials" class="py-20 bg-white">
+    <section id="testimonials" class="py-12 md:py-20 bg-white">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="text-center mb-16">
           <span
@@ -1930,24 +1934,24 @@
         <!-- Carousel Container -->
         <div class="relative max-w-4xl mx-auto overflow-hidden">
           <!-- Carousel Track -->
-          <div
+          <ul
             id="testimonial-track"
             class="flex transition-transform duration-500 ease-in-out"
           >
             <!-- Testimonial 1 -->
-            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+            <li class="w-full md:w-1/2 flex-shrink-0 px-4">
               <div
-                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+                class="bg-white px-4 py-8 md:p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
               >
                 <i
-                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                  class="fas fa-quote-right text-teal-100 text-4xl md:text-6xl absolute top-4 right-6"
                 ></i>
-                <div class="flex items-center mb-6">
-                  <div
+                <div class="flex mb-6 relative z-10">
+                  <figure
                     class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
                   >
                     <img src="/images/client-3.jpg" alt="Client" />
-                  </div>
+                  </figure>
                   <div>
                     <h4 class="font-bold text-lg">Muhammad Haroon</h4>
                     <p class="text-gray-500">FOUNDER / CEO - Codiffy</p>
@@ -1976,17 +1980,17 @@
                   >
                 </div>
               </div>
-            </div>
+            </li>
 
             <!-- Testimonial 2 -->
-            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+            <li class="w-full md:w-1/2 flex-shrink-0 px-4">
               <div
-                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+                class="bg-white px-4 py-8 md:p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
               >
                 <i
-                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                  class="fas fa-quote-right text-teal-100 text-4xl md:text-6xl absolute top-4 right-6"
                 ></i>
-                <div class="flex items-center mb-6">
+                <div class="flex mb-6 relative z-10">
                   <div
                     class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
                   >
@@ -2018,22 +2022,26 @@
                   >
                 </div>
               </div>
-            </div>
+            </li>
 
             <!-- Testimonial 3 -->
-            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+            <li class="w-full md:w-1/2 flex-shrink-0 px-4">
               <div
-                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+                class="bg-white px-4 py-8 md:p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
               >
                 <i
-                  class="fas fa-quote-right text-purple-100 text-6xl absolute top-4 right-6"
+                  class="fas fa-quote-right text-purple-100 text-4xl md:text-6xl absolute top-4 right-6"
                 ></i>
-                <div class="flex items-center mb-6">
-                  <div
+                <div class="flex mb-6 relative z-10">
+                  <figure
                     class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-purple-500 to-purple-300 flex items-center justify-center text-white font-bold text-xl mr-4"
                   >
-                    <img src="/images/client-1.jpg" alt="Client" />
-                  </div>
+                    <img
+                      src="/images/client-1.jpg"
+                      alt="Client"
+                      class="object-cover h-full w-full"
+                    />
+                  </figure>
                   <div>
                     <h4 class="font-bold text-lg">Absaar Malik</h4>
                     <p class="text-gray-500">
@@ -2064,17 +2072,17 @@
                   >
                 </div>
               </div>
-            </div>
+            </li>
 
             <!-- Testimonial 4 -->
-            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+            <li class="w-full md:w-1/2 flex-shrink-0 px-4">
               <div
-                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+                class="bg-white px-4 py-8 md:p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
               >
                 <i
-                  class="fas fa-quote-right text-blue-100 text-6xl absolute top-4 right-6"
+                  class="fas fa-quote-right text-blue-100 text-4xl md:text-6xl absolute top-4 right-6"
                 ></i>
-                <div class="flex items-center mb-6">
+                <div class="flex mb-6 relative z-10">
                   <div
                     class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-blue-300 flex items-center justify-center text-white font-bold text-xl mr-4"
                   >
@@ -2111,17 +2119,17 @@
                   >
                 </div>
               </div>
-            </div>
+            </li>
 
             <!-- Testimonial 5 -->
-            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+            <li class="w-full md:w-1/2 flex-shrink-0 px-4">
               <div
-                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+                class="bg-white px-4 py-8 md:p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
               >
                 <i
-                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                  class="fas fa-quote-right text-teal-100 text-4xl md:text-6xl absolute top-4 right-6"
                 ></i>
-                <div class="flex items-center mb-6">
+                <div class="flex mb-6 relative z-10">
                   <div
                     class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
                   >
@@ -2149,22 +2157,22 @@
                   >
                 </div>
               </div>
-            </div>
+            </li>
 
             <!-- Testimonial 6 -->
-            <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+            <li class="w-full md:w-1/2 flex-shrink-0 px-4">
               <div
-                class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
+                class="bg-white px-4 py-8 md:p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative flex flex-col"
               >
                 <i
-                  class="fas fa-quote-right text-teal-100 text-6xl absolute top-4 right-6"
+                  class="fas fa-quote-right text-teal-100 text-4xl md:text-6xl absolute top-4 right-6"
                 ></i>
-                <div class="flex items-center mb-6">
-                  <div
+                <div class="flex mb-6 relative z-10">
+                  <figure
                     class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-teal-300 flex items-center justify-center text-white font-bold text-xl mr-4"
                   >
                     <img src="/images/client-2.jpg" alt="Client" />
-                  </div>
+                  </figure>
                   <div>
                     <h4 class="font-bold text-lg">Mohamed Karkotly</h4>
                     <p class="text-gray-500">
@@ -2193,8 +2201,8 @@
                   >
                 </div>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
 
         <!-- Dynamic dots container -->
@@ -2203,7 +2211,7 @@
         </div>
 
         <!-- CTA -->
-        <div class="text-center mt-16">
+        <div class="text-center mt-8 md:mt-16">
           <a
             href="#contact"
             class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300 group glow-animation"
@@ -2218,7 +2226,7 @@
     </section>
 
     <!-- Contact Section - Redesigned -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-12 md:py-20 bg-gray-50 overflow-hidden">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="text-center mb-16">
           <span
