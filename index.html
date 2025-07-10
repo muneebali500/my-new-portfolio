@@ -361,7 +361,7 @@
   </head>
   <body class="font-sans antialiased text-gray-800">
     <!-- Hero Section with Integrated Header -->
-    <section class="hero-section min-h-[540px]">
+    <section class="hero-section relative">
       <!-- Initial Header (becomes fixed after scroll) -->
       <div id="main-header" class="header-transition w-full z-50 relative">
         <nav
@@ -426,7 +426,7 @@
 
       <!-- Hero Content -->
       <div
-        class="container mx-auto px-6 flex items-center justify-center min-h-[540px]"
+        class="container mx-auto px-6 flex items-center justify-center min-h-[667px] md:min-h-[540px]"
       >
         <div class="hero-content max-w-2xl mx-auto text-center -mt-8">
           <h1
@@ -454,6 +454,12 @@
           <div
             class="flex flex-col sm:flex-row gap-4 justify-center hero-buttons"
           >
+            <button
+              class="btn btn-outline w-full md:w-48 py-3 rounded-lg font-medium"
+              id="intro-btn"
+            >
+              <i class="fas fa-video mr-2"></i>Intro Video
+            </button>
             <a
               href="#projects"
               class="btn btn-primary px-8 py-3 rounded-lg font-medium pulse-animation"
@@ -463,12 +469,32 @@
             <a
               href="https://lnkd.in/d_J-t_7Q"
               target="_blank"
-              class="btn btn-outline px-8 py-3 rounded-lg font-medium"
+              class="btn btn-outline w-full md:w-48 py-3 rounded-lg font-medium"
             >
               <i class="fas fa-file-alt mr-2"></i>Download CV
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- Scroll down indicator -->
+      <div
+        class="absolute bottom-8 left-[49%] transform -translate-x-[49%] animate-bounce float-animation"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-blue-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
       </div>
     </section>
 
@@ -482,36 +508,13 @@
       >
         <span
           class="close-modal absolute top-4 right-4 text-white text-2xl cursor-pointer z-10"
+          id="close-video-modal-sign"
           >&times;</span
         >
-        <iframe
-          id="intro-video"
-          class="w-full aspect-video"
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID?enablejsapi=1"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+        <video controls autoplay class="w-full h-full">
+          <source src="/images/muneeb-intro.mp4" type="video/mp4" />
+        </video>
       </div>
-    </div>
-
-    <!-- Scroll down indicator -->
-    <div
-      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce float-animation"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8 text-blue-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 14l-7 7m0 0l-7-7m7 7V3"
-        />
-      </svg>
     </div>
 
     <!-- About Section - Elegant Redesign -->
@@ -2786,6 +2789,26 @@
           cardWidth = testimonials[0].offsetWidth;
           updateCarousel();
         });
+      });
+    </script>
+
+    <script>
+      const introBtn = document.getElementById("intro-btn");
+      const videoModal = document.getElementById("video-modal");
+      const closeVideoModalSign = document.getElementById(
+        "close-video-modal-sign"
+      );
+      const videoElement = document.querySelector("#video-modal video");
+
+      introBtn.addEventListener("click", () => {
+        videoModal.classList.remove("hidden");
+        videoElement.play();
+      });
+
+      closeVideoModalSign.addEventListener("click", () => {
+        videoModal.classList.add("hidden");
+        videoElement.pause(); // Pause the video
+        videoElement.currentTime = 0; // Reset to start (optional)
       });
     </script>
   </body>
