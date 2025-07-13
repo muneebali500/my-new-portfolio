@@ -373,3 +373,17 @@ body {
 #caseStudyModal {
   transition: opacity 0.3s ease;
 }
+
+/* Example contrast fixes */
+.text-gray-600 {
+  color: #4a5568; /* Darker gray for better contrast */
+}
+
+.bg-gray-200 {
+  background-color: #e2e8f0; /* Lighter background for better contrast */
+}
+
+.testimonial-dot {
+  min-width: 24px;
+  min-height: 24px;
+}
