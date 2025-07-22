@@ -23,21 +23,21 @@ window.addEventListener("scroll", () => {
 });
 
 // Intro Video Modal
-const introBtn = document.getElementById("intro-btn");
-const videoModal = document.getElementById("video-modal");
-const closeVideoModalSign = document.getElementById("close-video-modal-sign");
-const videoElement = document.querySelector("#video-modal video");
+// const introBtn = document.getElementById("intro-btn");
+// const videoModal = document.getElementById("video-modal");
+// const closeVideoModalSign = document.getElementById("close-video-modal-sign");
+// const videoElement = document.querySelector("#video-modal video");
 
-introBtn.addEventListener("click", () => {
-  videoModal.classList.remove("hidden");
-  videoElement.play();
-});
+// introBtn.addEventListener("click", () => {
+//   videoModal.classList.remove("hidden");
+//   videoElement.play();
+// });
 
-closeVideoModalSign.addEventListener("click", () => {
-  videoModal.classList.add("hidden");
-  videoElement.pause(); // Pause the video
-  videoElement.currentTime = 0; // Reset to start (optional)
-});
+// closeVideoModalSign.addEventListener("click", () => {
+//   videoModal.classList.add("hidden");
+//   videoElement.pause(); // Pause the video
+//   videoElement.currentTime = 0; // Reset to start (optional)
+// });
 
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById("mobile-menu-button");
