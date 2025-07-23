@@ -26,6 +26,13 @@
 
     <title>Muneeb Ali | Frontend Engineer & WordPress Specialist</title>
 
+    <link
+      rel="preload"
+      href="https://fonts.cdnfonts.com/css/satoshi"
+      as="font"
+      crossorigin
+    />
+
     <!-- Favicon -->
     <link rel="icon" href="./favicon/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="./favicon/favicon.ico" />
@@ -1500,9 +1507,9 @@
                     </li>
                   </ul>
                   <button
-                    onclick="openCaseStudy('erp')"
-                    class="text-blue-600 font-medium hover:text-blue-800 transition-colors flex items-center group"
+                    class="case-study-trigger text-blue-600 font-medium hover:text-blue-800 transition-colors flex items-center group"
                     aria-label="View ERP System case study"
+                    data-project="project1"
                   >
                     Case Study
                     <i
@@ -2009,8 +2016,7 @@
                         Warehouse Management Case Study
                       </h3>
                       <button
-                        onclick="closeCaseStudy()"
-                        class="text-gray-400 hover:text-gray-500"
+                        class="close-case-btn text-gray-400 hover:text-gray-500"
                         aria-label="Close case study"
                       >
                         <i class="fas fa-times"></i>
@@ -2081,8 +2087,7 @@
               >
                 <button
                   type="button"
-                  onclick="closeCaseStudy()"
-                  class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
+                  class="close-case-btn w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
                 >
                   Close Case Study
                 </button>
