@@ -551,3 +551,107 @@ document
 
 // Set current year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Gallery functionality
+let currentGalleryImages = [];
+let currentImageIndex = 0;
+
+function openGallery(projectId) {
+  header.style.display = "none";
+  // Set different images for each project (replace with your actual images)
+  const projectImages = {
+    erp: [
+      "./images/erp/dashoboard.png",
+      "./images/erp/attribute-tab.png",
+      "./images/erp/audit-log.png",
+      "./images/erp/customer-form.png",
+      "./images/erp/inventory-form.png",
+      "./images/erp/inventory-table.png",
+      "./images/erp/purchase-list.png",
+      "./images/erp/report-filter.png",
+      "./images/erp/sale-order-form.png",
+      "./images/erp/search-filter.png",
+      "./images/erp/sidebar-1.png",
+      "./images/erp/sidebar-3.png",
+      "./images/erp/subcategory-form.png",
+      "./images/erp/supplier-form.png",
+      "./images/erp/variance-tab.png",
+    ],
+    admitpath: [
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3",
+    ],
+    westward360: [
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3",
+    ],
+    directfitness: [
+      "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3",
+    ],
+    wowconstruction: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3",
+    ],
+    pairtime: [
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3",
+    ],
+  };
+
+  currentGalleryImages = projectImages[projectId] || [];
+  currentImageIndex = 0;
+
+  if (currentGalleryImages.length > 0) {
+    document.getElementById("galleryImage").src = currentGalleryImages[0];
+    document.getElementById(
+      "imageCounter"
+    ).textContent = `1/${currentGalleryImages.length}`;
+    document.getElementById("galleryModal").classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeGallery() {
+  header.style.display = "block";
+  document.getElementById("galleryModal").classList.add("hidden");
+  document.body.style.overflow = "auto";
+}
+
+function navigateGallery(direction) {
+  currentImageIndex += direction;
+
+  // Handle wrap-around
+  if (currentImageIndex < 0) {
+    currentImageIndex = currentGalleryImages.length - 1;
+  } else if (currentImageIndex >= currentGalleryImages.length) {
+    currentImageIndex = 0;
+  }
+
+  document.getElementById("galleryImage").src =
+    currentGalleryImages[currentImageIndex];
+  document.getElementById("imageCounter").textContent = `${
+    currentImageIndex + 1
+  }/${currentGalleryImages.length}`;
+}
+
+// Close modal when clicking outside content
+document.addEventListener("click", (e) => {
+  if (e.target === document.getElementById("galleryModal")) {
+    closeGallery();
+  }
+});
+
+// Keyboard navigation
+document.addEventListener("keydown", (e) => {
+  const galleryModal = document.getElementById("galleryModal");
+  if (!galleryModal.classList.contains("hidden")) {
+    if (e.key === "ArrowLeft") {
+      navigateGallery(-1);
+    } else if (e.key === "ArrowRight") {
+      navigateGallery(1);
+    } else if (e.key === "Escape") {
+      closeGallery();
+    }
+  }
+});

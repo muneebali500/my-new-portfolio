@@ -387,3 +387,23 @@ body {
   min-width: 24px;
   min-height: 24px;
 }
+
+/* Gallery Modal Styles */
+#galleryModal {
+  transition: opacity 0.3s ease;
+}
+
+#galleryModal img {
+  transition: opacity 0.3s ease;
+}
+
+#galleryModal button {
+  transition: background-color 0.2s ease;
+}
+
+#imageCounter {
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
