@@ -1,5 +1,5 @@
 <!-- projects.html  (Create a NEW page) -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -64,7 +64,9 @@
         color: #111827;
       }
       .tab-btn {
-        transition: transform 0.2s ease, box-shadow 0.2s ease,
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
           background 0.2s ease;
       }
       .tab-btn:hover {
@@ -2068,7 +2070,7 @@
                         Gallery
                         <i class="fas fa-images ml-2" aria-hidden="true"></i>
                       </button>
-                      <button
+                      <!-- <button
                         onclick="openCaseStudy('erp')"
                         class="text-blue-600 font-medium hover:text-blue-800 transition-colors flex items-center group"
                         aria-label="View ERP System case study"
@@ -2078,7 +2080,7 @@
                           class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
                           aria-hidden="true"
                         ></i>
-                      </button>
+                      </button> -->
                     </div>
                   </div>
                 </article>
@@ -2171,6 +2173,17 @@
                         aria-hidden="true"
                       ></i>
                     </a> -->
+
+                    <div class="flex justify-between items-center mt-2">
+                      <button
+                        onclick="openGallery('admit')"
+                        class="text-blue-600 font-medium hover:text-blue-800 transition-colors flex items-center group"
+                        aria-label="View ERP System gallery"
+                      >
+                        Gallery
+                        <i class="fas fa-images ml-2" aria-hidden="true"></i>
+                      </button>
+                    </div>
                   </div>
                 </article>
               </li>
@@ -2365,7 +2378,7 @@
       (function () {
         const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
         const panels = Array.from(
-          document.querySelectorAll('[role="tabpanel"]')
+          document.querySelectorAll('[role="tabpanel"]'),
         );
 
         function activate(tab) {

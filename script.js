@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   document.querySelectorAll(".slide-in-left, .slide-in-right").forEach((el) => {
@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const avatar = testimonial.querySelector(".rounded-full");
       avatar.className = avatar.className.replace(
         /from-\w+-\d+ to-\w+-\d+/,
-        colors.bg
+        colors.bg,
       );
 
       // Update project tag
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "bg-purple-50",
         "text-purple-600",
         "bg-teal-50",
-        "text-teal-600"
+        "text-teal-600",
       );
       projectTag.classList.add(colors.bgLight, colors.text);
 
@@ -352,7 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "text-blue-100",
         "text-purple-100",
         "text-teal-100",
-        "text-amber-100"
+        "text-amber-100",
       );
       quoteIcon.classList.add(colors.quote);
 
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
       testimonial.setAttribute("role", "tabpanel");
       testimonial.setAttribute(
         "aria-labelledby",
-        `testimonial-heading-${index}`
+        `testimonial-heading-${index}`,
       );
       testimonial.setAttribute("id", `testimonial-${index}`);
       testimonial.setAttribute("aria-hidden", index > 1 ? "true" : "false");
@@ -454,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Focus the first visible testimonial for screen readers
       const firstVisibleTestimonial = document.querySelector(
-        `[data-index="${currentIndex}"]`
+        `[data-index="${currentIndex}"]`,
       );
       if (firstVisibleTestimonial) {
         firstVisibleTestimonial.focus();
@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleKeyDown(e) {
     const dots = document.querySelectorAll(".testimonial-dot");
     const currentDotIndex = Array.from(dots).findIndex(
-      (dot) => dot.getAttribute("aria-selected") === "true"
+      (dot) => dot.getAttribute("aria-selected") === "true",
     );
 
     if (e.key === "ArrowRight") {
@@ -577,25 +577,18 @@ function openGallery(projectId) {
       "./images/erp/supplier-form.png",
       "./images/erp/variance-tab.png",
     ],
-    admitpath: [
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3",
-    ],
-    westward360: [
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3",
-    ],
-    directfitness: [
-      "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3",
-    ],
-    wowconstruction: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3",
-    ],
-    pairtime: [
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3",
+    admit: [
+      "./images/admitpath/pic-1.png",
+      "./images/admitpath/pic-2.png",
+      "./images/admitpath/pic-3.png",
+      "./images/admitpath/pic-4.png",
+      "./images/admitpath/pic-5.png",
+      "./images/admitpath/pic-6.png",
+      "./images/admitpath/pic-7.png",
+      "./images/admitpath/pic-8.png",
+      "./images/admitpath/pic-9.png",
+      "./images/admitpath/pic-10.png",
+      "./images/admitpath/pic-11.png",
     ],
   };
 
@@ -604,9 +597,8 @@ function openGallery(projectId) {
 
   if (currentGalleryImages.length > 0) {
     document.getElementById("galleryImage").src = currentGalleryImages[0];
-    document.getElementById(
-      "imageCounter"
-    ).textContent = `1/${currentGalleryImages.length}`;
+    document.getElementById("imageCounter").textContent =
+      `1/${currentGalleryImages.length}`;
     document.getElementById("galleryModal").classList.remove("hidden");
     document.body.style.overflow = "hidden";
   }
