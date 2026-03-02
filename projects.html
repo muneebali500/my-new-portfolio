@@ -216,7 +216,8 @@
             </h2>
             <p class="text-lg text-gray-700 max-w-2xl mx-auto">
               Browse projects across <strong>WordPress</strong>,
-              <strong>UI/UX</strong>, and <strong>React</strong>.
+              <strong>UI/UX</strong>, <strong>React</strong>, and
+              <strong>JavaScript</strong>.
             </p>
           </div>
         </div>
@@ -268,6 +269,17 @@
                 data-tab="react"
               >
                 <i class="fab fa-react mr-2" aria-hidden="true"></i> React
+              </button>
+
+              <button
+                class="tab-btn px-6 py-3 rounded-xl font-semibold border"
+                role="tab"
+                id="tab-javascript"
+                aria-controls="panel-javascript"
+                aria-selected="false"
+                data-tab="javascript"
+              >
+                <i class="fab fa-js mr-2" aria-hidden="true"></i> JavaScript
               </button>
             </div>
           </div>
@@ -2183,6 +2195,130 @@
                         Gallery
                         <i class="fas fa-images ml-2" aria-hidden="true"></i>
                       </button>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <!-- JavaScript Panel -->
+          <div
+            id="panel-javascript"
+            class="tab-panel"
+            role="tabpanel"
+            aria-labelledby="tab-javascript"
+            hidden
+          >
+            <ul
+              class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              aria-label="JavaScript projects"
+            >
+              <!-- Vivid Tasks -->
+              <li class="group perspective-1000 fade-in delay-200">
+                <article
+                  class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
+                >
+                  <div
+                    class="glass-card front p-6 rounded-2xl h-full flex flex-col"
+                  >
+                    <div
+                      class="h-48 bg-gradient-to-br from-indigo-600 to-indigo-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80"
+                        alt="Vivid Tasks productivity and task management app interface"
+                        loading="lazy"
+                        class="absolute inset-0 w-full h-full object-cover opacity-30"
+                      />
+                      <span class="text-white text-2xl font-bold relative z-10"
+                        >Vivid Tasks</span
+                      >
+                      <div class="absolute bottom-4 right-4">
+                        <span
+                          class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                        >
+                          Task Management
+                        </span>
+                      </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">
+                      Modern Task Manager
+                    </h3>
+
+                    <p class="text-gray-700 mb-4 flex-grow">
+                      Feature-rich personal task manager built with zero
+                      frameworks. Includes time tracking, drag & drop
+                      reordering, smart filters, live stats dashboard, and
+                      localStorage persistence.
+                    </p>
+
+                    <ul
+                      class="flex flex-wrap gap-2 mb-4"
+                      aria-label="Technologies used"
+                    >
+                      <li
+                        class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                      >
+                        <i class="fab fa-html5 text-indigo-600 mr-1"></i> HTML5
+                      </li>
+                      <li
+                        class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                      >
+                        <i class="fab fa-css3-alt text-indigo-600 mr-1"></i>
+                        CSS3
+                      </li>
+                      <li
+                        class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                      >
+                        <i class="fab fa-js text-indigo-600 mr-1"></i> Vanilla
+                        JS
+                      </li>
+                      <li
+                        class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                      >
+                        <i class="fas fa-database text-indigo-600 mr-1"></i>
+                        localStorage
+                      </li>
+                      <li
+                        class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                      >
+                        <i class="fas fa-arrows-alt text-indigo-600 mr-1"></i>
+                        Drag & Drop API
+                      </li>
+                      <li
+                        class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
+                      >
+                        <i class="fas fa-stopwatch text-indigo-600 mr-1"></i>
+                        Time Tracking
+                      </li>
+                    </ul>
+
+                    <div class="flex justify-between items-center">
+                      <a
+                        href="https://vivid-tasks.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center group"
+                        aria-label="View Vivid Tasks live website (opens in new tab)"
+                      >
+                        View Live
+                        <i
+                          class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+
+                      <a
+                        href="https://github.com/muneebali500/advanced-task-management-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center group"
+                        aria-label="View Vivid Tasks GitHub repository (opens in new tab)"
+                      >
+                        <i class="fab fa-github mr-2"></i> GitHub
+                      </a>
                     </div>
                   </div>
                 </article>
