@@ -613,6 +613,20 @@ function openGallery(projectId) {
       "./images/wowconstruction/wow-20.png",
       "./images/wowconstruction/wow-21.png",
     ],
+    firestarter: [
+      "./images/firestarter/firestarter-01-home-hero.png",
+      "./images/firestarter/firestarter-02-home-latest-blog.png",
+      "./images/firestarter/firestarter-03-home-services.png",
+      "./images/firestarter/firestarter-04-home-tools-resources.png",
+      "./images/firestarter/firestarter-05-coast-calculator-main.png",
+      "./images/firestarter/firestarter-06-coast-calculator-features.png",
+      "./images/firestarter/firestarter-07-coast-calculator-explainer.png",
+      "./images/firestarter/firestarter-08-coast-calculator-math.png",
+      "./images/firestarter/firestarter-09-about-hero.png",
+      "./images/firestarter/firestarter-10-about-story.png",
+      "./images/firestarter/firestarter-11-about-beliefs.png",
+      "./images/firestarter/firestarter-12-about-testimonials.png",
+    ],
   };
 
   currentGalleryImages = projectImages[projectId] || [];

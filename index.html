@@ -356,7 +356,7 @@
                 >
                   <!-- Your Photo with proper alt text -->
                   <img
-                    src="./images/about-photo.avif"
+                    src="/images/about-photo.avif"
                     alt="Muneeb Ali, Frontend Engineer"
                     class="w-full h-full object-cover rounded-2xl"
                     loading="lazy"
@@ -1929,7 +1929,7 @@
                     </li>
                   </ul>
 
-                  <a
+                  <!-- <a
                     href="https://firestarternow.com/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1941,7 +1941,16 @@
                       class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
                       aria-hidden="true"
                     ></i>
-                  </a>
+                  </a> -->
+                  <button
+                    type="button"
+                    onclick="openGallery('firestarter')"
+                    class="text-red-600 font-medium hover:text-red-800 transition-colors flex items-center group"
+                    aria-label="View FireStarter gallery"
+                  >
+                    Gallery
+                    <i class="fas fa-images ml-2" aria-hidden="true"></i>
+                  </button>
                 </div>
               </article>
             </li>
