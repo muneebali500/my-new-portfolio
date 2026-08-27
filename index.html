@@ -356,7 +356,7 @@
                 >
                   <!-- Your Photo with proper alt text -->
                   <img
-                    src="/images/about-photo.avif"
+                    src="./images/about-photo.avif"
                     alt="Muneeb Ali, Frontend Engineer"
                     class="w-full h-full object-cover rounded-2xl"
                     loading="lazy"
@@ -1743,7 +1743,7 @@
                       <i class="fab fa-figma text-emerald-600 mr-1"></i> Figma
                     </li>
                   </ul>
-                  <a
+                  <!-- <a
                     href="https://wowconstruction.co.uk/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1755,7 +1755,16 @@
                       class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
                       aria-hidden="true"
                     ></i>
-                  </a>
+                  </a> -->
+                  <button
+                    type="button"
+                    onclick="openGallery('wowconstruction')"
+                    class="text-emerald-600 font-medium hover:text-emerald-800 transition-colors flex items-center group"
+                    aria-label="View Wow Construction gallery"
+                  >
+                    Gallery
+                    <i class="fas fa-images ml-2" aria-hidden="true"></i>
+                  </button>
                 </div>
               </article>
             </li>
@@ -2807,6 +2816,63 @@
           </div>
         </div>
       </section>
+      <!-- Gallery Modal -->
+      <div
+        id="galleryModal"
+        class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/90"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="galleryModalTitle"
+      >
+        <div class="flex items-center justify-center min-h-screen">
+          <button
+            onclick="closeGallery()"
+            class="absolute top-4 right-8 text-white text-4xl z-50 hover:text-[var(--primary)]"
+            aria-label="Close gallery"
+          >
+            &times;
+          </button>
+
+          <div class="relative w-full max-w-4xl mx-4">
+            <h2 id="galleryModalTitle" class="sr-only">Project Gallery</h2>
+
+            <!-- Navigation Arrows -->
+            <button
+              onclick="navigateGallery(-1)"
+              class="absolute left-0 -bottom-4 transform -translate-y-1/2 bg-white text-[var(--primary)] py-2 px-4 rounded-full z-10 ml-4"
+              aria-label="Previous image"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button
+              onclick="navigateGallery(1)"
+              class="absolute right-0 -bottom-4 transform -translate-y-1/2 bg-white text-[var(--primary)] py-2 px-4 rounded-full z-10 mr-4"
+              aria-label="Next image"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Gallery Content -->
+            <div
+              class="relative overflow-hidden rounded-lg"
+              style="padding-top: 56.25%"
+            >
+              <img
+                id="galleryImage"
+                src=""
+                alt="Project screenshot"
+                class="absolute top-0 left-0 w-full h-full object-contain"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Image Counter -->
+            <div class="text-center mt-4 text-white">
+              <span id="imageCounter">1/3</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer with semantic markup -->
