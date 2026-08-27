@@ -556,9 +556,19 @@ document.getElementById("year").textContent = new Date().getFullYear();
 let currentGalleryImages = [];
 let currentImageIndex = 0;
 
+function getGalleryModal() {
+  return document.getElementById("galleryModal");
+}
+
 function openGallery(projectId) {
-  header.style.display = "none";
-  // Set different images for each project (replace with your actual images)
+  const galleryModal = getGalleryModal();
+  const galleryImage = document.getElementById("galleryImage");
+  const imageCounter = document.getElementById("imageCounter");
+
+  if (!galleryModal || !galleryImage || !imageCounter) {
+    return;
+  }
+
   const projectImages = {
     erp: [
       "./images/erp/dashoboard.png",
@@ -633,21 +643,38 @@ function openGallery(projectId) {
   currentImageIndex = 0;
 
   if (currentGalleryImages.length > 0) {
-    document.getElementById("galleryImage").src = currentGalleryImages[0];
-    document.getElementById("imageCounter").textContent =
-      `1/${currentGalleryImages.length}`;
-    document.getElementById("galleryModal").classList.remove("hidden");
+    if (header) {
+      header.style.display = "none";
+    }
+    galleryImage.src = currentGalleryImages[0];
+    imageCounter.textContent = `1/${currentGalleryImages.length}`;
+    galleryModal.classList.remove("hidden");
     document.body.style.overflow = "hidden";
   }
 }
 
 function closeGallery() {
-  header.style.display = "block";
-  document.getElementById("galleryModal").classList.add("hidden");
+  const galleryModal = getGalleryModal();
+
+  if (!galleryModal) {
+    return;
+  }
+
+  if (header) {
+    header.style.display = "block";
+  }
+  galleryModal.classList.add("hidden");
   document.body.style.overflow = "auto";
 }
 
 function navigateGallery(direction) {
+  const galleryImage = document.getElementById("galleryImage");
+  const imageCounter = document.getElementById("imageCounter");
+
+  if (!currentGalleryImages.length || !galleryImage || !imageCounter) {
+    return;
+  }
+
   currentImageIndex += direction;
 
   // Handle wrap-around
@@ -657,24 +684,26 @@ function navigateGallery(direction) {
     currentImageIndex = 0;
   }
 
-  document.getElementById("galleryImage").src =
-    currentGalleryImages[currentImageIndex];
-  document.getElementById("imageCounter").textContent = `${
-    currentImageIndex + 1
-  }/${currentGalleryImages.length}`;
+  galleryImage.src = currentGalleryImages[currentImageIndex];
+  imageCounter.textContent = `${currentImageIndex + 1}/${
+    currentGalleryImages.length
+  }`;
 }
 
 // Close modal when clicking outside content
 document.addEventListener("click", (e) => {
-  if (e.target === document.getElementById("galleryModal")) {
+  const galleryModal = getGalleryModal();
+
+  if (galleryModal && e.target === galleryModal) {
     closeGallery();
   }
 });
 
 // Keyboard navigation
 document.addEventListener("keydown", (e) => {
-  const galleryModal = document.getElementById("galleryModal");
-  if (!galleryModal.classList.contains("hidden")) {
+  const galleryModal = getGalleryModal();
+
+  if (galleryModal && !galleryModal.classList.contains("hidden")) {
     if (e.key === "ArrowLeft") {
       navigateGallery(-1);
     } else if (e.key === "ArrowRight") {
