@@ -7,35 +7,55 @@
 
     <meta
       name="description"
-      content="Muneeb Ali - Projects | WordPress, UI/UX, and React work."
-    />
-    <meta
-      name="keywords"
-      content="WordPress Projects, UI UX Projects, React Projects, Portfolio"
+      content="WordPress projects by Muneeb Ali: custom themes, WooCommerce and Elementor builds, plus UI/UX and React work."
     />
     <meta name="author" content="Muneeb Ali" />
 
-    <meta property="og:title" content="Muneeb Ali | Projects" />
+    <meta property="og:title" content="Muneeb Ali | WordPress Projects" />
     <meta
       property="og:description"
       content="Browse my work across WordPress, UI/UX, and React."
     />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://muneebdev.netlify.app/projects.html"
+    />
+    <meta property="og:site_name" content="Muneeb Ali" />
+    <meta
+      property="og:image"
+      content="https://muneebdev.netlify.app/images/og-cover.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muneeb Ali | WordPress Projects" />
+    <meta
+      name="twitter:description"
+      content="Browse WordPress, UI/UX and React projects by Muneeb Ali."
+    />
+    <meta
+      name="twitter:image"
+      content="https://muneebdev.netlify.app/images/og-cover.png"
+    />
+    <meta name="theme-color" content="#7c3aed" />
+    <link rel="canonical" href="https://muneebdev.netlify.app/projects.html" />
 
-    <title>Muneeb Ali | Projects</title>
+    <title>Muneeb Ali | WordPress Projects</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./favicon/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="./favicon/favicon.ico" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
 
     <!-- Preload -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
     <link
       rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       as="style"
     />
     <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="tailwind.css" as="style" />
 
     <!-- CSS -->
     <link
@@ -43,9 +63,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="tailwind.css" />
 
     <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="./script.js" defer></script>
 
     <style>
@@ -297,93 +317,7 @@
               class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
               aria-label="WordPress projects"
             >
-              <!-- Minesite Furniture -->
-              <!-- <li class="group perspective-1000 fade-in delay-600">
-                <article
-                  class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
-                >
-                  <div
-                    class="glass-card front p-6 rounded-2xl h-full flex flex-col"
-                  >
-                    <div
-                      class="h-48 bg-gradient-to-br from-orange-600 to-orange-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
-                    >
-                      <img
-                        src="./images/minesitefurniture.avif"
-                        alt="Minesite Furniture commercial furniture catalog interface"
-                        loading="lazy"
-                        class="absolute inset-0 w-full h-full object-cover opacity-30"
-                      />
-                      <span class="text-white text-2xl font-bold relative z-10"
-                        >Minesite Furniture</span
-                      >
-                      <div class="absolute bottom-4 right-4">
-                        <span
-                          class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                        >
-                          Commercial Furniture
-                        </span>
-                      </div>
-                    </div>
-
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">
-                      Mining Camp Solutions
-                    </h3>
-
-                    <p class="text-gray-700 mb-4 flex-grow">
-                      Custom WordPress platform for mining accommodation
-                      furniture with product catalog, turnkey solutions, and
-                      remote site management features.
-                    </p>
-
-                    <ul
-                      class="flex flex-wrap gap-2 mb-4"
-                      aria-label="Technologies used"
-                    >
-                      <li
-                        class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                      >
-                        <i class="fas fa-paint-brush text-orange-600 mr-1"></i>
-                        Custom Theme
-                      </li>
-
-                      <li
-                        class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                      >
-                        <i class="fas fa-cogs text-orange-600 mr-1"></i>
-                        React Migration
-                      </li>
-                      <li
-                        class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                      >
-                        <i class="fas fa-layer-group text-orange-600 mr-1"></i>
-                        Custom Post Type
-                      </li>
-                      <li
-                        class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                      >
-                        <i class="fas fa-plug text-orange-600 mr-1"></i>
-                        API Integration
-                      </li>
-                    </ul>
-
-                    <a
-                      href="https://minesitefurniture.evolisyss.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-orange-600 font-medium hover:text-orange-800 transition-colors flex items-center group"
-                      aria-label="View Minesite Furniture live website (opens in new tab)"
-                    >
-                      View Live
-                      <i
-                        class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
-                  </div>
-                </article>
-              </li> -->
-
+              <!-- Creativeminds -->
               <li class="group perspective-1000 fade-in delay-700">
                 <article
                   class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
@@ -1026,19 +960,6 @@
                       </li>
                     </ul>
 
-                    <!-- <a
-                      href="https://firestarternow.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-red-600 font-medium hover:text-red-800 transition-colors flex items-center group"
-                      aria-label="View FireStarter live website (opens in new tab)"
-                    >
-                      View Live
-                      <i
-                        class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                        aria-hidden="true"
-                      ></i>
-                    </a> -->
                     <button
                       type="button"
                       onclick="openGallery('firestarter')"
@@ -1303,19 +1224,6 @@
                         <i class="fab fa-figma text-emerald-600 mr-1"></i> Figma
                       </li>
                     </ul>
-                    <!-- <a
-                      href="https://wowconstruction.co.uk/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-emerald-600 font-medium hover:text-emerald-800 transition-colors flex items-center group"
-                      aria-label="View Wow Construction live website (opens in new tab)"
-                    >
-                      View Live
-                      <i
-                        class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                        aria-hidden="true"
-                      ></i>
-                    </a> -->
                     <button
                       type="button"
                       onclick="openGallery('wowconstruction')"
@@ -1329,89 +1237,6 @@
                 </article>
               </li>
               <!-- HF – GUMU Agentur -->
-              <!--
-              <li class="group perspective-1000 fade-in delay-700">
-                <article
-                  class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
-                >
-                  <div
-                    class="glass-card front p-6 rounded-2xl h-full flex flex-col"
-                  >
-                    <div
-                      class="h-48 bg-gradient-to-br from-emerald-600 to-emerald-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
-                    >
-                      <img
-                        src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80"
-                        alt="HF GUMU Agentur corporate business website interface"
-                        loading="lazy"
-                        class="absolute inset-0 w-full h-full object-cover opacity-30"
-                      />
-
-                      <span
-                        class="text-white text-2xl font-bold relative z-10 text-center px-4"
-                      >
-                        HF – GUMU Agentur
-                      </span>
-
-                      <div class="absolute bottom-4 right-4">
-                        <span
-                          class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                        >
-                          <i
-                            class="fas fa-briefcase mr-1"
-                            aria-hidden="true"
-                          ></i>
-                          Corporate Website
-                        </span>
-                      </div>
-                    </div>
-
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">
-                      Business & Consulting
-                    </h3>
-
-                    <p class="text-gray-700 mb-4 flex-grow">
-                      Corporate WordPress website built with WPBakery, focusing
-                      on clear messaging, structured content, and responsive
-                      layouts.
-                    </p>
-
-                    <ul
-                      class="flex flex-wrap gap-2 mb-4"
-                      aria-label="Technologies used"
-                    >
-                      <li
-                        class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full flex items-center"
-                      >
-                        <i class="fab fa-wordpress text-emerald-600 mr-1.5"></i>
-                        WordPress
-                      </li>
-
-                      <li
-                        class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full flex items-center"
-                      >
-                        <i class="fas fa-th-large text-emerald-600 mr-1.5"></i>
-                        WPBakery
-                      </li>
-                    </ul>
-
-                    <a
-                      href="https://hf.gumu-agentur.de/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-emerald-700 font-medium hover:text-emerald-900 transition-colors flex items-center group"
-                      aria-label="View HF – GUMU Agentur live website (opens in new tab)"
-                    >
-                      View Live
-                      <i
-                        class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
-                  </div>
-                </article>
-              </li>
-              -->
             </ul>
           </section>
 
@@ -1797,8 +1622,7 @@
                       IPTV Streaming Service
                     </h3>
                     <p class="text-gray-700 mb-4 flex-grow">
-                      Premium IPTV hosting with 99.9% uptime and global content
-                      delivery.
+                      Premium IPTV hosting with global content delivery.
                     </p>
                     <ul
                       class="flex flex-wrap gap-2 mb-4"
@@ -2142,8 +1966,8 @@
                       Warehouse Management
                     </h3>
                     <p class="text-gray-700 mb-4 flex-grow">
-                      Real-time inventory tracking system reducing operational
-                      errors by 30% and improving fulfillment speed.
+                      Real-time inventory tracking system with barcode scanning,
+                      automated alerts and a KPI dashboard.
                     </p>
                     <ul
                       class="flex flex-wrap gap-2 mb-4"
@@ -2196,17 +2020,6 @@
                         Gallery
                         <i class="fas fa-images ml-2" aria-hidden="true"></i>
                       </button>
-                      <!-- <button
-                        onclick="openCaseStudy('erp')"
-                        class="text-blue-600 font-medium hover:text-blue-800 transition-colors flex items-center group"
-                        aria-label="View ERP System case study"
-                      >
-                        Case Study
-                        <i
-                          class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
-                          aria-hidden="true"
-                        ></i>
-                      </button> -->
                     </div>
                   </div>
                 </article>
@@ -2286,19 +2099,6 @@
                         <i class="fas fa-wind text-teal-600 mr-1"></i> Tailwind
                       </li>
                     </ul>
-                    <!-- <a
-                      href="https://admit-path.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-teal-600 font-medium hover:text-teal-800 transition-colors flex items-center group"
-                      aria-label="View AdmitPath live website (opens in new tab)"
-                    >
-                      View Live
-                      <i
-                        class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                        aria-hidden="true"
-                      ></i>
-                    </a> -->
 
                     <div class="flex justify-between items-center mt-2">
                       <button
@@ -2340,7 +2140,7 @@
                       class="h-48 bg-gradient-to-br from-orange-700 to-amber-500 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
                     >
                       <img
-                        src="./images/savor-recipe-finder-desktop.png"
+                        src="./images/savor-recipe-finder-desktop.webp"
                         alt="Savor recipe finder desktop interface"
                         loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-45"
@@ -2359,9 +2159,9 @@
                       Advanced Recipe Finder
                     </h3>
                     <p class="text-gray-700 mb-4 flex-grow">
-                      Responsive recipe discovery app powered by TheMealDB,
-                      with keyword search, ingredient search, category filters,
-                      saved recipes, meal planning, and shopping lists.
+                      Responsive recipe discovery app powered by TheMealDB, with
+                      keyword search, ingredient search, category filters, saved
+                      recipes, meal planning, and shopping lists.
                     </p>
                     <ul
                       class="flex flex-wrap gap-2 mb-4"
@@ -2439,7 +2239,7 @@
                       class="h-48 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
                     >
                       <img
-                        src="./images/canvas-studio-desktop.png"
+                        src="./images/canvas-studio-desktop.webp"
                         alt="Canvas Studio drawing app desktop interface"
                         loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-45"
@@ -2539,7 +2339,7 @@
                       class="h-48 bg-gradient-to-br from-violet-600 to-fuchsia-500 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
                     >
                       <img
-                        src="./images/neo-quiz-desktop.png"
+                        src="./images/neo-quiz-desktop.webp"
                         alt="NeoQuiz quiz application desktop interface"
                         loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-45"
@@ -2747,7 +2547,7 @@
                       class="h-48 bg-gradient-to-br from-rose-500 to-orange-500 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
                     >
                       <img
-                        src="./images/memory-match-desktop.png"
+                        src="./images/memory-match-desktop.webp"
                         alt="Memory Match card game desktop interface"
                         loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-45"
@@ -2936,7 +2736,6 @@
                   </div>
                 </article>
               </li>
-
             </ul>
           </div>
         </div>
@@ -2993,8 +2792,8 @@
                       </h4>
                       <p class="text-gray-700">
                         The client needed to modernize their legacy warehouse
-                        system that was causing 15% inventory discrepancies and
-                        slow order processing times.
+                        system that was causing inventory discrepancies and slow
+                        order processing.
                       </p>
                     </div>
 
@@ -3011,30 +2810,6 @@
                         <li>Dashboard with KPIs</li>
                         <li>Mobile-friendly interface</li>
                       </ul>
-                    </div>
-
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                      <h4 class="font-semibold text-lg text-blue-600 mb-2">
-                        Results
-                      </h4>
-                      <div class="grid grid-cols-2 gap-4 mt-2">
-                        <div
-                          class="bg-white p-3 rounded-lg shadow-sm border border-gray-100"
-                        >
-                          <p class="text-sm text-gray-500">
-                            Inventory Accuracy
-                          </p>
-                          <p class="text-2xl font-bold text-blue-600">99.2%</p>
-                        </div>
-                        <div
-                          class="bg-white p-3 rounded-lg shadow-sm border border-gray-100"
-                        >
-                          <p class="text-sm text-gray-500">Order Processing</p>
-                          <p class="text-2xl font-bold text-blue-600">
-                            3.2x faster
-                          </p>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>

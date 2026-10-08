@@ -5,35 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Muneeb Ali - WordPress Specialist with 3+ years experience building high-performance WordPress websites, custom themes, Elementor, ACF, WooCommerce, SEO, and speed optimization."
-    />
-    <meta
-      name="keywords"
-      content="WordPress Developer, WordPress Specialist, Elementor Developer, ACF Pro, WooCommerce Developer, Custom WordPress Themes, WordPress Performance, WordPress SEO"
+      content="Muneeb Ali is a WordPress developer with 4+ years of experience building fast custom themes, ACF Pro and WooCommerce sites. Also builds React interfaces. Open to full-time remote roles and freelance projects."
     />
     <meta name="author" content="Muneeb Ali" />
 
-    <meta property="og:title" content="Muneeb Ali | WordPress Specialist" />
+    <meta property="og:title" content="Muneeb Ali | WordPress Developer" />
     <meta
       property="og:description"
-      content="Professional portfolio showcasing my WordPress work: custom themes, Elementor, ACF, WooCommerce, SEO, and performance optimization."
+      content="WordPress developer with 4+ years of experience: custom themes, ACF Pro, WooCommerce, SEO and performance optimization. Also builds React interfaces."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://muneebdev.netlify.app/" />
+    <meta property="og:site_name" content="Muneeb Ali" />
+    <meta
+      property="og:image"
+      content="https://muneebdev.netlify.app/images/og-cover.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muneeb Ali | WordPress Developer" />
+    <meta
+      name="twitter:description"
+      content="WordPress developer. Custom themes, ACF Pro, WooCommerce, plus React. Open to full-time roles and freelance work."
+    />
+    <meta
+      name="twitter:image"
+      content="https://muneebdev.netlify.app/images/og-cover.png"
+    />
+    <meta name="theme-color" content="#7c3aed" />
 
-    <title>Muneeb Ali | WordPress Specialist</title>
+    <title>Muneeb Ali | WordPress Developer</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./favicon/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="./favicon/favicon.ico" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
     <link
       rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       as="style"
     />
     <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="tailwind.css" as="style" />
     <link rel="preload" href="script.js" as="script" />
 
     <!-- CSS -->
@@ -42,17 +58,40 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="tailwind.css" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://muneebdev.netlify.app" />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muneeb Ali",
+        "jobTitle": "WordPress Developer",
+        "url": "https://muneebdev.netlify.app",
+        "email": "mailto:muneebali500@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/muneeb-ali-56507121a/",
+          "https://github.com/muneebali500"
+        ],
+        "knowsAbout": [
+          "WordPress",
+          "Custom WordPress themes",
+          "ACF Pro",
+          "WooCommerce",
+          "Elementor",
+          "React",
+          "JavaScript",
+          "Web performance",
+          "SEO"
+        ]
+      }
+    </script>
     <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <!-- <a href="#main-content" class="skip-link">Skip to main content</a> -->
-
     <!-- Main Header with improved semantics and accessibility -->
     <header
       class="w-full fixed top-0 left-0 z-30 py-4 px-6"
@@ -70,7 +109,7 @@
             class="text-2xl font-bold"
             aria-label="Muneeb Ali - Home"
           >
-            <h1 class="sr-only">Muneeb Ali</h1>
+            <span class="sr-only">Muneeb Ali</span>
             <span class="gradient-text" aria-hidden="true">MUNEEB</span>
             <span class="text-secondary" aria-hidden="true">ALI</span>
           </a>
@@ -89,7 +128,9 @@
               >
             </li>
             <li role="none">
-              <a href="#projects" class="nav-item" role="menuitem">Projects</a>
+              <a href="projects.html" class="nav-item" role="menuitem"
+                >Projects</a
+              >
             </li>
             <li role="none">
               <a href="#testimonials" class="nav-item" role="menuitem"
@@ -185,19 +226,25 @@
               id="hero-subheading"
               class="text-xl md:text-3xl font-semibold mb-8 text-secondary uppercase tracking-wider"
             >
-              WordPress Specialist
+              WordPress Developer
             </h2>
 
-            <p class="text-lg md:text-xl mb-10 text-gray-700 leading-relaxed">
+            <p class="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
               I build
               <strong class="font-bold gradient-text"
-                >fast, scalable WordPress websites</strong
+                >fast, easy-to-manage WordPress websites</strong
               >
-              using <strong>Custom themes</strong>, <strong>ACF Pro</strong>,
-              <strong>WooCommerce</strong> and <strong>Elementor</strong> —
-              improving performance by <strong>30–40%</strong>, boosting
-              traffic, and reducing bounce rates through clean builds, SEO, and
-              optimization.
+              with <strong>custom themes</strong>, <strong>ACF Pro</strong>,
+              <strong>WooCommerce</strong> and <strong>Elementor</strong>,
+              focused on speed, SEO and clean, maintainable code. I also build
+              interfaces with <strong>React</strong>.
+            </p>
+            <p class="text-base md:text-lg mb-10 text-gray-600">
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2"
+                aria-hidden="true"
+              ></span>
+              Open to full-time remote roles and freelance projects
             </p>
 
             <!-- Action Buttons -->
@@ -205,23 +252,10 @@
               class="flex flex-col sm:flex-row gap-4 justify-center"
               aria-label="Primary actions"
             >
-              <!-- <a
-                href="https://drive.google.com/file/d/17CtBwH_XWs138KQc_kfwIoiyZ_XqmGAE/view?usp=sharing"
-                target="_blank"
-                id="intro-btn"
-                class="btn-3d"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    var(--bright-pink),
-                    var(--bright-purple)
-                  );
-                "
-                aria-label="Watch introduction video"
-                aria-haspopup="dialog"
-              >
-                <i class="fas fa-video mr-2" aria-hidden="true"></i> Intro Video
-              </a> -->
+              <a href="#contact" class="btn-3d" aria-label="Contact me">
+                <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Let's
+                Talk
+              </a>
               <a
                 href="projects.html"
                 class="btn-3d"
@@ -259,45 +293,6 @@
         </div>
 
         <!-- Video Modal -->
-        <!-- <div
-          id="video-modal"
-          class="modal hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="video-modal-title"
-          aria-hidden="true"
-        >
-          <div
-            class="modal-content bg-white rounded-lg overflow-hidden w-full max-w-2xl relative"
-          >
-            <button
-              class="close-modal absolute top-4 right-4 text-white text-2xl cursor-pointer z-10"
-              id="close-video-modal-sign"
-              aria-label="Close video modal"
-            >
-              &times;
-            </button>
-            <h2 id="video-modal-title" class="sr-only">Introduction Video</h2>
-            <video
-              controls
-              class="w-full h-full"
-              aria-describedby="video-modal-description"
-            >
-              <source src="./images/muneeb-intro.mp4" type="video/mp4" />
-              <track
-                kind="captions"
-                src="./captions/intro.vtt"
-                srclang="en"
-                label="English"
-                default
-              />
-              Your browser does not support the video tag.
-            </video>
-            <div id="video-modal-description" class="sr-only">
-              Muneeb Ali's professional introduction video
-            </div>
-          </div>
-        </div> -->
       </section>
 
       <!-- About Section with semantic markup -->
@@ -357,7 +352,7 @@
                   <!-- Your Photo with proper alt text -->
                   <img
                     src="/images/about-photo.avif"
-                    alt="Muneeb Ali, Frontend Engineer"
+                    alt="Muneeb Ali, WordPress Developer"
                     class="w-full h-full object-cover rounded-2xl"
                     loading="lazy"
                   />
@@ -428,10 +423,10 @@
                 </p>
 
                 <p class="text-lg leading-relaxed">
-                  I specialized in
+                  I specialize in
                   <strong class="text-purple-600 dark:text-purple-300"
-                    >WordPress Custom Theme</strong
-                  >, mastering
+                    >Custom WordPress Themes</strong
+                  >, working with
                   <strong class="text-yellow-600 dark:text-yellow-300"
                     >Elementor</strong
                   >,
@@ -441,13 +436,16 @@
                   <strong class="text-pink-600 dark:text-pink-300"
                     >WooCommerce</strong
                   >
-                  to deliver dynamic, client-editable websites.
+                  to build dynamic websites that clients can edit and manage
+                  themselves.
                 </p>
 
                 <p class="text-lg leading-relaxed">
-                  Today, I focus on performance, SEO, and maintainable WordPress
-                  builds — delivering faster load times, better conversions, and
-                  easy content management for clients.
+                  Today, I focus on performance, SEO and clean, maintainable
+                  code. Whether it's a new build, a redesign or an online store,
+                  I aim for sites that are fast, easy to update and built to
+                  last. I also use <strong>React</strong> when a project needs a
+                  more interactive interface.
                 </p>
               </div>
 
@@ -457,16 +455,16 @@
                 aria-label="Achievements"
               >
                 <li class="glass-card p-4 rounded-xl fade-in delay-100">
-                  <p class="text-3xl font-bold text-blue-600 mb-1">10+</p>
-                  <p class="text-sm text-gray-600">WordPress Sites Revamped</p>
+                  <p class="text-3xl font-bold text-blue-600 mb-1">4+</p>
+                  <p class="text-sm text-gray-600">Years of Experience</p>
                 </li>
                 <li class="glass-card p-4 rounded-xl fade-in delay-200">
-                  <p class="text-3xl font-bold text-pink-600 mb-1">30–40%</p>
-                  <p class="text-sm text-gray-600">Speed Improvements</p>
+                  <p class="text-3xl font-bold text-pink-600 mb-1">30+</p>
+                  <p class="text-sm text-gray-600">Projects Built</p>
                 </li>
                 <li class="glass-card p-4 rounded-xl fade-in delay-300">
-                  <p class="text-3xl font-bold text-purple-600 mb-1">15%</p>
-                  <p class="text-sm text-gray-600">Sales Lift (WooCommerce)</p>
+                  <p class="text-3xl font-bold text-purple-600 mb-1">3</p>
+                  <p class="text-sm text-gray-600">Companies Worked With</p>
                 </li>
               </ul>
 
@@ -552,8 +550,8 @@
             <p
               class="text-lg text-gray-700 max-w-2xl mx-auto fade-in delay-200"
             >
-              The technologies and methodologies I leverage to build exceptional
-              digital experiences.
+              The tools and methods I use to build fast, maintainable WordPress
+              sites.
             </p>
           </header>
 
@@ -580,23 +578,6 @@
                 Custom themes, site builds, content structures, and maintainable
                 WordPress solutions.
               </p>
-              <div class="flex items-center">
-                <div
-                  class="w-full bg-gray-200/50 rounded-full h-2"
-                  role="progressbar"
-                  aria-valuenow="95"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full"
-                    style="width: 95%"
-                  ></div>
-                </div>
-                <span class="text-sm font-medium text-purple-600 ml-3"
-                  >95%</span
-                >
-              </div>
             </li>
 
             <!-- Skill 3 - ACF -->
@@ -617,21 +598,6 @@
                 Flexible content, modular sections, and client-friendly editing
                 experiences using ACF Pro.
               </p>
-              <div class="flex items-center">
-                <div
-                  class="w-full bg-gray-200/50 rounded-full h-2"
-                  role="progressbar"
-                  aria-valuenow="92"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="bg-gradient-to-r from-blue-500 to-blue-400 h-2 rounded-full"
-                    style="width: 92%"
-                  ></div>
-                </div>
-                <span class="text-sm font-medium text-blue-600 ml-3">92%</span>
-              </div>
             </li>
 
             <!-- Skill 4 - WooCommerce -->
@@ -652,23 +618,6 @@
                 Product pages, checkout optimization, payment gateway
                 integrations, and store performance.
               </p>
-              <div class="flex items-center">
-                <div
-                  class="w-full bg-gray-200/50 rounded-full h-2"
-                  role="progressbar"
-                  aria-valuenow="88"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="bg-gradient-to-r from-indigo-500 to-indigo-400 h-2 rounded-full"
-                    style="width: 88%"
-                  ></div>
-                </div>
-                <span class="text-sm font-medium text-indigo-600 ml-3"
-                  >88%</span
-                >
-              </div>
             </li>
 
             <!-- Skill 5 - Performance -->
@@ -689,21 +638,6 @@
                 Critical CSS, lazy loading, image optimization, caching
                 strategy, and lightweight builds.
               </p>
-              <div class="flex items-center">
-                <div
-                  class="w-full bg-gray-200/50 rounded-full h-2"
-                  role="progressbar"
-                  aria-valuenow="93"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="bg-gradient-to-r from-red-500 to-red-400 h-2 rounded-full"
-                    style="width: 93%"
-                  ></div>
-                </div>
-                <span class="text-sm font-medium text-red-600 ml-3">93%</span>
-              </div>
             </li>
 
             <!-- Skill 6 - SEO & Security -->
@@ -724,23 +658,6 @@
                 Technical SEO, speed-first practices, and practical hardening
                 for stable WordPress sites.
               </p>
-              <div class="flex items-center">
-                <div
-                  class="w-full bg-gray-200/50 rounded-full h-2"
-                  role="progressbar"
-                  aria-valuenow="90"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="bg-gradient-to-r from-yellow-500 to-yellow-400 h-2 rounded-full"
-                    style="width: 90%"
-                  ></div>
-                </div>
-                <span class="text-sm font-medium text-yellow-600 ml-3"
-                  >90%</span
-                >
-              </div>
             </li>
 
             <!-- Skill 2 - Elementor / Builders -->
@@ -761,23 +678,6 @@
                 Advanced Elementor Pro builds, reusable templates, and clean
                 component-style sections.
               </p>
-              <div class="flex items-center">
-                <div
-                  class="w-full bg-gray-200/50 rounded-full h-2"
-                  role="progressbar"
-                  aria-valuenow="95"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="bg-gradient-to-r from-emerald-500 to-emerald-400 h-2 rounded-full"
-                    style="width: 95%"
-                  ></div>
-                </div>
-                <span class="text-sm font-medium text-emerald-600 ml-3"
-                  >95%</span
-                >
-              </div>
             </li>
           </ul>
 
@@ -1016,10 +916,6 @@
                       class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
                     >
                       <span class="mr-2">Oct 2023 - Oct 2026</span>
-                      <!-- <span
-                        class="px-2 py-0.5 bg-white text-blue-600 rounded-full text-xs font-bold"
-                        >Current</span
-                      > -->
                     </time>
                   </div>
 
@@ -1069,31 +965,32 @@
                           <div class="flex-shrink-0 mt-1">
                             <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Built WordPress websites from scratch using
-                            <strong>Custom Themes</strong> and
-                            <strong>Elementor Pro</strong>.
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Build custom WordPress themes from scratch,
+                            tailored to each client's design and content
+                            needs.</span
+                          >
                         </li>
                         <li class="flex items-start">
                           <div class="flex-shrink-0 mt-1">
                             <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Improved performance by optimizing CSS/JS and
-                            images, reducing load times by
-                            <strong>~40%</strong>.
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Use <strong>ACF</strong> for dynamic,
+                            client-managed content, and
+                            <strong>Elementor Pro</strong> on projects where a
+                            page builder is the right fit.</span
+                          >
                         </li>
                         <li class="flex items-start">
                           <div class="flex-shrink-0 mt-1">
                             <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Integrated <strong>ACF</strong> for dynamic content
-                            management and improved SEO/security for higher
-                            traffic.
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Improve site speed by optimizing CSS, JavaScript
+                            and images, and strengthen SEO and security across
+                            client sites.</span
+                          >
                         </li>
                       </ul>
                     </article>
@@ -1165,13 +1062,11 @@
                               aria-hidden="true"
                             ></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Developed
-                            <strong class="text-gray-800"
-                              >school management app</strong
-                            >
-                            with React/Electron
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Built a school management app with
+                            <strong>React</strong> and
+                            <strong>Electron</strong>.</span
+                          >
                         </li>
                         <li class="flex items-start">
                           <div class="flex-shrink-0 mt-1">
@@ -1180,13 +1075,10 @@
                               aria-hidden="true"
                             ></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Achieved
-                            <strong class="text-gray-800"
-                              >40% faster load times</strong
-                            >
-                            through optimization
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Improved load times through front-end
+                            optimization.</span
+                          >
                         </li>
                         <li class="flex items-start">
                           <div class="flex-shrink-0 mt-1">
@@ -1195,13 +1087,10 @@
                               aria-hidden="true"
                             ></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Designed
-                            <strong class="text-gray-800"
-                              >custom WordPress themes</strong
-                            >
-                            with Elementor
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Designed custom <strong>WordPress</strong> themes
+                            with <strong>Elementor</strong>.</span
+                          >
                         </li>
                       </ul>
                     </article>
@@ -1297,13 +1186,10 @@
                               aria-hidden="true"
                             ></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Optimized
-                            <strong class="text-gray-800"
-                              >15+ frontend components</strong
-                            >
-                            improving performance by 35%
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Optimized frontend components to improve
+                            performance.</span
+                          >
                         </li>
                         <li class="flex items-start">
                           <div class="flex-shrink-0 mt-1">
@@ -1312,11 +1198,10 @@
                               aria-hidden="true"
                             ></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Boosted team productivity by
-                            <strong class="text-gray-800">20%</strong> using
-                            React Hooks patterns
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Improved team productivity by applying
+                            <strong>React Hooks</strong> patterns.</span
+                          >
                         </li>
                         <li class="flex items-start">
                           <div class="flex-shrink-0 mt-1">
@@ -1325,13 +1210,10 @@
                               aria-hidden="true"
                             ></div>
                           </div>
-                          <span class="ml-3 text-sm">
-                            Improved
-                            <strong class="text-gray-800"
-                              >cross-browser compatibility</strong
-                            >
-                            for 15+ components
-                          </span>
+                          <span class="ml-3 text-sm"
+                            >Improved cross-browser compatibility across
+                            components.</span
+                          >
                         </li>
                       </ul>
                     </article>
@@ -1390,660 +1272,488 @@
             <p
               class="text-lg text-gray-700 max-w-2xl mx-auto fade-in delay-200"
             >
-              Impactful solutions that demonstrate my technical expertise
+              Four client builds: the brief, what I built, and the tools behind
+              them
             </p>
           </header>
 
           <!-- Projects Grid -->
           <ul
-            class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            aria-label="Project portfolio"
+            class="grid md:grid-cols-2 gap-8"
+            aria-label="Featured case studies"
           >
-            <!-- Minesite Furniture -->
-            <!-- <li class="group perspective-1000 fade-in delay-600">
+            <li class="fade-in">
               <article
-                class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
+                class="glass-card rounded-2xl h-full flex flex-col overflow-hidden"
               >
                 <div
-                  class="glass-card front p-6 rounded-2xl h-full flex flex-col"
+                  class="h-64 bg-gradient-to-br from-pink-600 to-rose-400 flex items-center justify-center relative overflow-hidden"
                 >
-                  <div
-                    class="h-48 bg-gradient-to-br from-orange-600 to-orange-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
+                  <img
+                    src="./images/creativeminds.jpg"
+                    alt="Creative Minds art sessions platform"
+                    loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover opacity-40"
+                  />
+                  <span class="text-white text-2xl font-bold relative z-10"
+                    >Creative Minds</span
                   >
-                    <img
-                      src="./images/minesitefurniture.avif"
-                      alt="Minesite Furniture commercial furniture catalog interface"
-                      loading="lazy"
-                      class="absolute inset-0 w-full h-full object-cover opacity-30"
-                    />
-                    <span class="text-white text-2xl font-bold relative z-10"
-                      >Minesite Furniture</span
-                    >
-                    <div class="absolute bottom-4 right-4">
-                      <span
-                        class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                      >
-                        Commercial Furniture
-                      </span>
-                    </div>
-                  </div>
-
-                  <h3 class="text-xl font-bold mb-3 text-gray-800">
-                    Mining Camp Solutions
-                  </h3>
-
-                  <p class="text-gray-700 mb-4 flex-grow">
-                    Custom WordPress platform for mining accommodation furniture
-                    with product catalog, turnkey solutions, and remote site
-                    management features.
-                  </p>
-
-                  <ul
-                    class="flex flex-wrap gap-2 mb-4"
-                    aria-label="Technologies used"
+                  <span
+                    class="absolute bottom-3 right-3 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                    >Artist Directory</span
                   >
-                    <li
-                      class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-paint-brush text-orange-600 mr-1"></i>
-                      Custom Theme
-                    </li>
-
-                    <li
-                      class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-cogs text-orange-600 mr-1"></i>
-                      React Migration
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-layer-group text-orange-600 mr-1"></i>
-                      Custom Post Type
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-plug text-orange-600 mr-1"></i>
-                      API Integration
-                    </li>
-                  </ul>
-
-                  <a
-                    href="https://minesitefurniture.evolisyss.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-orange-600 font-medium hover:text-orange-800 transition-colors flex items-center group"
-                    aria-label="View Minesite Furniture live website (opens in new tab)"
-                  >
-                    View Live
-                    <i
-                      class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
                 </div>
-              </article>
-            </li> -->
-
-            <li class="group perspective-1000 fade-in delay-700">
-              <article
-                class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
-              >
-                <div
-                  class="glass-card front p-6 rounded-2xl h-full flex flex-col"
-                >
-                  <div
-                    class="h-48 bg-gradient-to-br from-green-600 to-red-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
-                  >
-                    <img
-                      src="./images/creativeminds.jpg"
-                      alt="Creative Minds art sessions and artist directory platform"
-                      loading="lazy"
-                      class="absolute inset-0 w-full h-full object-cover opacity-30"
-                    />
-                    <span class="text-white text-2xl font-bold relative z-10">
-                      Creative Minds
-                    </span>
-                    <div class="absolute bottom-4 right-4">
-                      <span
-                        class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                      >
-                        Artist Directory
-                      </span>
-                    </div>
-                  </div>
-
-                  <h3 class="text-xl font-bold mb-3 text-gray-800">
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2 text-gray-800">
                     Creative Art Sessions Platform
                   </h3>
-
-                  <p class="text-gray-700 mb-4 flex-grow">
-                    Custom WordPress platform for UK-based creative art sessions
-                    with artist search, postcode-based discovery, secure artist
-                    dashboards, enquiry forms, SMTP email handling, and
-                    AJAX-powered interactions.
+                  <p class="text-gray-700 mb-4">
+                    <strong>The brief:</strong> A UK platform that connects
+                    people with creative art sessions and the artists who run
+                    them.
                   </p>
-
+                  <p class="text-sm font-semibold text-gray-800 mb-2">
+                    What I built
+                  </p>
+                  <ul class="space-y-2 text-sm text-gray-700 mb-5">
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-pink-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >Custom plugin powering artist search and postcode-based
+                        discovery</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-pink-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >Secure artist dashboards and Stripe payment
+                        integration</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-pink-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >Enquiry forms with SMTP email delivery and AJAX
+                        interactions</span
+                      >
+                    </li>
+                  </ul>
                   <ul
-                    class="flex flex-wrap gap-2 mb-4"
+                    class="flex flex-wrap gap-2 mb-5 mt-auto"
                     aria-label="Technologies used"
                   >
                     <li
-                      class="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-plug text-green-600 mr-1"></i>
                       Custom Plugin
                     </li>
-
                     <li
-                      class="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-users text-green-600 mr-1"></i>
-                      Artist Dashboard
+                      Stripe
                     </li>
-
                     <li
-                      class="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-layer-group text-green-600 mr-1"></i>
                       ACF Pro
                     </li>
-
                     <li
-                      class="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-envelope text-green-600 mr-1"></i>
                       SMTP
                     </li>
-
                     <li
-                      class="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-code-branch text-green-600 mr-1"></i>
                       AJAX
                     </li>
                   </ul>
-
                   <a
                     href="https://creativeminds.art/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-green-600 font-medium hover:text-green-800 transition-colors flex items-center group"
+                    class="text-pink-600 font-medium hover:underline flex items-center"
                     aria-label="View Creative Minds live website (opens in new tab)"
                   >
                     View Live
                     <i
-                      class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                      class="fas fa-external-link-alt ml-2"
                       aria-hidden="true"
                     ></i>
                   </a>
                 </div>
               </article>
             </li>
-
-            <!-- Westward360 -->
-            <li class="group perspective-1000 fade-in delay-200">
+            <li class="fade-in">
               <article
-                class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
+                class="glass-card rounded-2xl h-full flex flex-col overflow-hidden"
               >
                 <div
-                  class="glass-card front p-6 rounded-2xl h-full flex flex-col"
+                  class="h-64 bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center relative overflow-hidden"
                 >
-                  <div
-                    class="h-48 bg-gradient-to-br from-purple-600 to-purple-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
+                  <img
+                    src="./images/westward360.avif"
+                    alt="Westward360 property management website"
+                    loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover opacity-40"
+                  />
+                  <span class="text-white text-2xl font-bold relative z-10"
+                    >Westward360</span
                   >
-                    <img
-                      src="./images/westward360.avif"
-                      alt="Westward360 real estate website interface"
-                      loading="lazy"
-                      class="absolute inset-0 w-full h-full object-cover opacity-30"
-                    />
-                    <span class="text-white text-2xl font-bold relative z-10"
-                      >Westward360</span
-                    >
-                    <div class="absolute bottom-4 right-4">
-                      <span
-                        class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                      >
-                        <i class="fas fa-building mr-1" aria-hidden="true"></i>
-                        Real Estate
-                      </span>
-                    </div>
-                  </div>
-
-                  <h3 class="text-xl font-bold mb-3 text-gray-800">
-                    Property Management
+                  <span
+                    class="absolute bottom-3 right-3 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                    >Property Management</span
+                  >
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2 text-gray-800">
+                    Real Estate Management Website
                   </h3>
-
-                  <p class="text-gray-700 mb-4 flex-grow">
-                    Full-service real estate management company handling
-                    rentals, maintenance, and tenant relations.
+                  <p class="text-gray-700 mb-4">
+                    <strong>The brief:</strong> A full-service real estate
+                    management company handling rentals, maintenance and tenant
+                    relations.
                   </p>
-
+                  <p class="text-sm font-semibold text-gray-800 mb-2">
+                    What I built
+                  </p>
+                  <ul class="space-y-2 text-sm text-gray-700 mb-5">
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-blue-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >Custom theme and custom post types to organize property
+                        and service content</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-blue-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >ACF Pro fields so the team can update content
+                        themselves</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-blue-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >Contact Form 7 enquiries, All in One SEO and NitroPack
+                        performance tuning</span
+                      >
+                    </li>
+                  </ul>
                   <ul
-                    class="flex flex-wrap gap-2 mb-4"
+                    class="flex flex-wrap gap-2 mb-5 mt-auto"
                     aria-label="Technologies used"
                   >
                     <li
-                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-paint-brush text-purple-600 mr-1.5"></i>
                       Custom Theme
                     </li>
                     <li
-                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-sliders-h text-purple-600 mr-1.5"></i>
                       ACF Pro
                     </li>
                     <li
-                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-layer-group text-purple-600 mr-1.5"></i>
                       Custom Post Type
                     </li>
                     <li
-                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-chart-line text-purple-600 mr-1.5"></i>
-                      All in One SEO
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-envelope text-purple-600 mr-1.5"></i>
-                      Contact Form 7
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-bolt text-purple-600 mr-1.5"></i>
                       NitroPack
                     </li>
                   </ul>
-
                   <a
                     href="https://westward360.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-purple-600 font-medium hover:text-purple-800 transition-colors flex items-center group"
+                    class="text-blue-600 font-medium hover:underline flex items-center"
                     aria-label="View Westward360 live website (opens in new tab)"
                   >
                     View Live
                     <i
-                      class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                      class="fas fa-external-link-alt ml-2"
                       aria-hidden="true"
                     ></i>
                   </a>
                 </div>
               </article>
             </li>
-            <!-- Hedonia -->
-            <li class="group perspective-1000 fade-in delay-600">
+            <li class="fade-in">
               <article
-                class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
+                class="glass-card rounded-2xl h-full flex flex-col overflow-hidden"
               >
                 <div
-                  class="glass-card front p-6 rounded-2xl h-full flex flex-col"
+                  class="h-64 bg-gradient-to-br from-purple-600 to-fuchsia-400 flex items-center justify-center relative overflow-hidden"
                 >
-                  <div
-                    class="h-48 bg-gradient-to-br from-blue-700 to-yellow-500 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
+                  <img
+                    src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1200&q=80"
+                    alt="Hedonia product landing page"
+                    loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover opacity-40"
+                  />
+                  <span class="text-white text-2xl font-bold relative z-10"
+                    >Hedonia</span
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1200&q=80"
-                      alt="Medical supplement formulation and capsules concept"
-                      loading="lazy"
-                      class="absolute inset-0 w-full h-full object-cover opacity-30"
-                    />
-
-                    <span
-                      class="text-white text-2xl font-bold relative z-10 text-center px-4"
-                    >
-                      Hedonia
-                    </span>
-
-                    <div class="absolute bottom-4 right-4">
-                      <span
-                        class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                      >
-                        <i
-                          class="fas fa-heart-pulse mr-1"
-                          aria-hidden="true"
-                        ></i>
-                        Health & Wellness
-                      </span>
-                    </div>
-                  </div>
-
-                  <h3 class="text-xl font-bold mb-3 text-gray-800">
+                  <span
+                    class="absolute bottom-3 right-3 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                    >Landing Page + Checkout</span
+                  >
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2 text-gray-800">
                     Product Landing & Checkout
                   </h3>
-
-                  <p class="text-gray-700 mb-4 flex-grow">
-                    Conversion-focused Elementor landing page with WooCommerce
-                    checkout and Stripe payments.
+                  <p class="text-gray-700 mb-4">
+                    <strong>The brief:</strong> A conversion-focused landing
+                    page with a WooCommerce checkout and Stripe payments.
                   </p>
-
+                  <p class="text-sm font-semibold text-gray-800 mb-2">
+                    What I built
+                  </p>
+                  <ul class="space-y-2 text-sm text-gray-700 mb-5">
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-purple-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span>Landing page built with Elementor Pro</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-purple-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >WooCommerce checkout connected to Stripe payments</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-purple-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span>Yoast SEO setup for search visibility</span>
+                    </li>
+                  </ul>
                   <ul
-                    class="flex flex-wrap gap-2 mb-4"
+                    class="flex flex-wrap gap-2 mb-5 mt-auto"
                     aria-label="Technologies used"
                   >
                     <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fab fa-elementor text-blue-600 mr-1.5"></i>
                       Elementor Pro
                     </li>
-
                     <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fab fa-woocommerce text-blue-600 mr-1.5"></i>
                       WooCommerce
                     </li>
-
                     <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fab fa-stripe text-blue-600 mr-1.5"></i>
                       Stripe
                     </li>
-
                     <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-search text-blue-600 mr-1.5"></i>
                       Yoast SEO
                     </li>
                   </ul>
-
                   <a
                     href="https://hedonia.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-blue-700 font-medium hover:text-blue-900 transition-colors flex items-center group"
+                    class="text-purple-600 font-medium hover:underline flex items-center"
                     aria-label="View Hedonia live website (opens in new tab)"
                   >
                     View Live
                     <i
-                      class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                      class="fas fa-external-link-alt ml-2"
                       aria-hidden="true"
                     ></i>
                   </a>
                 </div>
               </article>
             </li>
-
-            <!-- Direct Fitness -->
-            <li class="group perspective-1000 fade-in delay-300">
+            <li class="fade-in">
               <article
-                class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
+                class="glass-card rounded-2xl h-full flex flex-col overflow-hidden"
               >
                 <div
-                  class="glass-card front p-6 rounded-2xl h-full flex flex-col"
+                  class="h-64 bg-gradient-to-br from-teal-600 to-emerald-400 flex items-center justify-center relative overflow-hidden"
                 >
-                  <div
-                    class="h-48 bg-gradient-to-br from-indigo-600 to-indigo-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
+                  <img
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
+                    alt="Hearing Health Center audiology website"
+                    loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover opacity-40"
+                  />
+                  <span class="text-white text-2xl font-bold relative z-10"
+                    >Hearing Health Center</span
                   >
-                    <img
-                      src="./images/directfitness.avif"
-                      alt="Direct Fitness ecommerce website"
-                      loading="lazy"
-                      class="absolute inset-0 w-full h-full object-cover opacity-30"
-                    />
-                    <span class="text-white text-2xl font-bold relative z-10"
-                      >Direct Fitness</span
-                    >
-                    <div class="absolute bottom-4 right-4">
-                      <span
-                        class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                      >
-                        Ecommerce
-                      </span>
-                    </div>
-                  </div>
-                  <h3 class="text-xl font-bold mb-3 text-gray-800">
-                    Fitness Equipment
-                  </h3>
-                  <p class="text-gray-700 mb-4 flex-grow">
-                    WordPress ecommerce platform with WooCommerce integration,
-                    PDF generation, and SEO optimization.
-                  </p>
-                  <ul
-                    class="flex flex-wrap gap-2 mb-4"
-                    aria-label="Technologies used"
+                  <span
+                    class="absolute bottom-3 right-3 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
+                    >Audiology Practice</span
                   >
-                    <li
-                      class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fab fa-wordpress text-indigo-600 mr-1"></i>
-                      Custom WordPress
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-cart-plus text-indigo-600 mr-1"></i>
-                      WooCommerce
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-search text-indigo-600 mr-1"></i> Yoast
-                      SEO
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fab fa-js text-indigo-600 mr-1"></i> jQuery
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-shield-alt text-indigo-600 mr-1"></i>
-                      Wordfence
-                    </li>
-                  </ul>
-                  <a
-                    href="https://directfitnesssolutions.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center group"
-                    aria-label="View Direct Fitness live website (opens in new tab)"
-                  >
-                    View Live
-                    <i
-                      class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
                 </div>
-              </article>
-            </li>
-            <!-- Hearing Health Center -->
-            <li class="group perspective-1000 fade-in delay-500">
-              <article
-                class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
-              >
-                <div
-                  class="glass-card front p-6 rounded-2xl h-full flex flex-col"
-                >
-                  <div
-                    class="h-48 bg-gradient-to-br from-teal-600 to-teal-400 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
-                      alt="Hearing Health Center audiology and hearing care website interface"
-                      loading="lazy"
-                      class="absolute inset-0 w-full h-full object-cover opacity-30"
-                    />
-
-                    <span
-                      class="text-white text-2xl font-bold relative z-10 text-center px-4"
-                    >
-                      Hearing Health Center
-                    </span>
-
-                    <div class="absolute bottom-4 right-4">
-                      <span
-                        class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                      >
-                        <i
-                          class="fas fa-ear-listen mr-1"
-                          aria-hidden="true"
-                        ></i>
-                        Healthcare
-                      </span>
-                    </div>
-                  </div>
-
-                  <h3 class="text-xl font-bold mb-3 text-gray-800">
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2 text-gray-800">
                     Audiology & Hearing Care
                   </h3>
-
-                  <p class="text-gray-700 mb-4 flex-grow">
-                    Patient-focused WordPress website for an audiology practice,
-                    featuring services, locations, appointment requests, and
-                    online product offerings.
+                  <p class="text-gray-700 mb-4">
+                    <strong>The brief:</strong> A patient-focused website for an
+                    audiology practice.
                   </p>
-
+                  <p class="text-sm font-semibold text-gray-800 mb-2">
+                    What I built
+                  </p>
+                  <ul class="space-y-2 text-sm text-gray-700 mb-5">
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-teal-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >Custom theme presenting services, locations and
+                        appointment requests</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-teal-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span>WooCommerce for online product offerings</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span
+                        class="w-2 h-2 mt-2 mr-3 rounded-full bg-teal-500 flex-shrink-0"
+                        aria-hidden="true"
+                      ></span
+                      ><span
+                        >Gravity Forms for patient enquiries and All in One
+                        SEO</span
+                      >
+                    </li>
+                  </ul>
                   <ul
-                    class="flex flex-wrap gap-2 mb-4"
+                    class="flex flex-wrap gap-2 mb-5 mt-auto"
                     aria-label="Technologies used"
                   >
                     <li
-                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-paint-brush text-teal-600 mr-1.5"></i>
                       Custom Theme
                     </li>
                     <li
-                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-cart-plus text-teal-700 mr-1.5"></i>
                       WooCommerce
                     </li>
-
-                    <!-- Added: Gravity Forms -->
                     <li
-                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-wpforms text-teal-600 mr-1.5"></i>
                       Gravity Forms
                     </li>
-
-                    <!-- Added: All in One SEO -->
                     <li
-                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full flex items-center"
+                      class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full"
                     >
-                      <i class="fas fa-chart-line text-teal-600 mr-1.5"></i>
                       All in One SEO
                     </li>
                   </ul>
-
                   <a
                     href="https://hearinghealthcenter.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-teal-700 font-medium hover:text-teal-900 transition-colors flex items-center group"
+                    class="text-teal-600 font-medium hover:underline flex items-center"
                     aria-label="View Hearing Health Center live website (opens in new tab)"
                   >
                     View Live
                     <i
-                      class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
+                      class="fas fa-external-link-alt ml-2"
                       aria-hidden="true"
                     ></i>
                   </a>
                 </div>
               </article>
             </li>
+          </ul>
 
-            <!-- Ontario Dynamics -->
-            <li class="group perspective-1000 fade-in delay-800">
-              <article
-                class="relative h-full transition-all duration-500 transform-style-preserve-3d group-hover:rotate-y-25"
+          <h3 class="text-2xl font-bold text-center mt-16 mb-6 text-gray-800">
+            More client work
+          </h3>
+          <ul
+            class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            aria-label="More client projects"
+          >
+            <li>
+              <a
+                href="https://directfitnesssolutions.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition"
+                ><span class="font-semibold text-gray-800">Direct Fitness</span
+                ><span class="block text-xs text-gray-600"
+                  >WooCommerce fitness equipment store</span
+                ></a
               >
-                <div
-                  class="glass-card front p-6 rounded-2xl h-full flex flex-col"
-                >
-                  <div
-                    class="h-48 bg-gradient-to-br from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden"
-                  >
-                    <img
-                      src="./images/ontariodynamics.avif"
-                      alt="Ontario Dynamics engineering and automation platform interface"
-                      loading="lazy"
-                      class="absolute inset-0 w-full h-full object-cover opacity-30"
-                    />
-                    <span class="text-white text-2xl font-bold relative z-10"
-                      >Ontario Dynamics</span
-                    >
-                    <div class="absolute bottom-4 right-4">
-                      <span
-                        class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full"
-                      >
-                        Engineering Solutions
-                      </span>
-                    </div>
-                  </div>
-                  <h3 class="text-xl font-bold mb-3 text-gray-800">
-                    Custom Automation
-                  </h3>
-                  <p class="text-gray-700 mb-4 flex-grow">
-                    Engineering firm specializing in custom testing equipment,
-                    mechanical product development, and special-purpose machines
-                    with 15+ years experience.
-                  </p>
-                  <ul
-                    class="flex flex-wrap gap-2 mb-4"
-                    aria-label="Technologies used"
-                  >
-                    <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-paint-brush text-blue-600 mr-1"></i>
-                      Custom Theme
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-layer-group text-blue-600 mr-1"></i>
-                      Custom Post Type
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-sliders-h text-purple-600 mr-1.5"></i>
-                      ACF Pro
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-mobile-alt text-blue-600 mr-1"></i>
-                      Responsive
-                    </li>
-                    <li
-                      class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full flex items-center"
-                    >
-                      <i class="fas fa-chart-line text-blue-600 mr-1"></i>
-                      Portfolio
-                    </li>
-                  </ul>
-                  <a
-                    href="https://ontariodynamics.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-600 font-medium hover:text-blue-800 transition-colors flex items-center group"
-                    aria-label="View Ontario Dynamics live website (opens in new tab)"
-                  >
-                    View Live
-                    <i
-                      class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-              </article>
+            </li>
+            <li>
+              <a
+                href="https://www.lenderstitle.com/"
+                class="block h-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition"
+                ><span class="font-semibold text-gray-800">lenderstitle</span
+                ><span class="block text-xs text-gray-600"
+                  >Custom theme for corporate website</span
+                ></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://ontariodynamics.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition"
+                ><span class="font-semibold text-gray-800"
+                  >Ontario Dynamics</span
+                ><span class="block text-xs text-gray-600"
+                  >Custom theme for an engineering firm</span
+                ></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.advancedgasket.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-full px-4 py-3 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition"
+                ><span class="font-semibold text-gray-800">Advanced Gasket</span
+                ><span class="block text-xs text-gray-600"
+                  >Custom gasket solutions website</span
+                ></a
+              >
             </li>
           </ul>
 
@@ -2128,7 +1838,7 @@
               role="list"
             >
               <!-- Testimonial 1 -->
-              <div
+              <!-- <div
                 class="w-full md:w-1/2 flex-shrink-0 px-2 sm:px-4"
                 role="tabpanel"
                 aria-labelledby="testimonial-heading-1"
@@ -2169,7 +1879,6 @@
                     </p>
                   </blockquote>
                   <div class="flex items-center justify-between">
-                    <!-- Replace your star ratings with this improved version -->
                     <div
                       class="flex"
                       role="img"
@@ -2202,7 +1911,7 @@
                     >
                   </div>
                 </article>
-              </div>
+              </div> -->
 
               <!-- Testimonial 2 -->
               <div
@@ -2240,7 +1949,7 @@
                     </p>
                   </blockquote>
                   <div class="flex items-center justify-between">
-                    <!-- Replace your star ratings with this improved version -->
+                    <!-- star ratings -->
                     <div
                       class="flex"
                       role="img"
@@ -2319,7 +2028,7 @@
                     </p>
                   </blockquote>
                   <div class="flex items-center justify-between">
-                    <!-- Replace your star ratings with this improved version -->
+                    <!-- star ratings -->
                     <div
                       class="flex"
                       role="img"
@@ -2386,15 +2095,15 @@
                   <blockquote class="text-gray-600 mb-6 relative z-10 flex-1">
                     <p class="italic">
                       "Muneeb was instrumental in building our Warehouse ERP's
-                      frontend, delivering a 30% faster interface through
+                      frontend, delivering a noticeably faster interface through
                       optimized React components. His real-time inventory
-                      dashboard reduced user errors by 25% while improving
-                      workflow efficiency. A rare blend of technical skill and
+                      dashboard reduced user errors while improving workflow
+                      efficiency. A rare blend of technical skill and
                       user-focused design thinking."
                     </p>
                   </blockquote>
                   <div class="flex items-center justify-between">
-                    <!-- Replace your star ratings with this improved version -->
+                    <!-- star ratings -->
                     <div
                       class="flex"
                       role="img"
@@ -2460,7 +2169,7 @@
                     <p class="italic">"Easy to work with, Recommended."</p>
                   </blockquote>
                   <div class="flex items-center justify-between">
-                    <!-- Replace your star ratings with this improved version -->
+                    <!-- star ratings -->
                     <div
                       class="flex"
                       role="img"
@@ -2537,7 +2246,7 @@
                     </p>
                   </blockquote>
                   <div class="flex items-center justify-between">
-                    <!-- Replace your star ratings with this improved version -->
+                    <!-- star ratings -->
                     <div
                       class="flex"
                       role="img"
@@ -2869,7 +2578,7 @@
           <div class="fade-in">
             <h3 class="text-xl font-bold mb-4 text-gray-800">Muneeb Ali</h3>
             <p class="text-gray-600 mb-4 max-w-[220px] mx-auto md:mx-0">
-              WordPress developer creating exceptional digital experiences.
+              WordPress developer building fast, easy-to-manage websites.
             </p>
             <div class="flex space-x-4 justify-center md:justify-start">
               <a

@@ -1,6 +1,7 @@
 // Animate glass card on load
 document.addEventListener("DOMContentLoaded", () => {
   const card = document.querySelector(".glass-card");
+  if (!card) return;
   setTimeout(() => {
     card.style.transform =
       "perspective(1000px) rotateX(0) rotateY(0) translateZ(30px)";
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Header scroll effect
 const header = document.querySelector("header");
 window.addEventListener("scroll", () => {
+  if (!header) return;
   if (window.scrollY > 50) {
     header.classList.add("shadow-lg");
     header.style.background = "rgba(255, 255, 255, 0.95)";
@@ -26,28 +28,11 @@ document.fonts.load('1em "Satoshi"').then(() => {
   document.documentElement.classList.add("fonts-loaded");
 });
 
-// Intro Video Modal
-// const introBtn = document.getElementById("intro-btn");
-// const videoModal = document.getElementById("video-modal");
-// const closeVideoModalSign = document.getElementById("close-video-modal-sign");
-// const videoElement = document.querySelector("#video-modal video");
-
-// introBtn.addEventListener("click", () => {
-//   videoModal.classList.remove("hidden");
-//   videoElement.play();
-// });
-
-// closeVideoModalSign.addEventListener("click", () => {
-//   videoModal.classList.add("hidden");
-//   videoElement.pause(); // Pause the video
-//   videoElement.currentTime = 0; // Reset to start (optional)
-// });
-
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById("mobile-menu-button");
 const navMenu = document.querySelector("nav .hidden.md\\:flex");
 
-mobileMenuBtn.addEventListener("click", () => {
+if (mobileMenuBtn && navMenu) mobileMenuBtn.addEventListener("click", () => {
   navMenu.classList.toggle("hidden");
   navMenu.classList.toggle("flex");
   navMenu.classList.toggle("absolute");
@@ -99,183 +84,6 @@ document.addEventListener("click", (e) => {
     closeCaseStudy();
   }
 });
-
-// // Testimonial Carousel Logic
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Color palette for testimonials
-//   const colorPalette = [
-//     {
-//       bg: "from-blue-500 to-blue-300",
-//       text: "text-blue-600",
-//       bgLight: "bg-blue-50",
-//       quote: "text-blue-100",
-//     },
-//     {
-//       bg: "from-teal-500 to-teal-300",
-//       text: "text-teal-600",
-//       bgLight: "bg-teal-50",
-//       quote: "text-teal-100",
-//     },
-//     {
-//       bg: "from-purple-500 to-purple-300",
-//       text: "text-purple-600",
-//       bgLight: "bg-purple-50",
-//       quote: "text-purple-100",
-//     },
-//     {
-//       bg: "from-amber-500 to-amber-300",
-//       text: "text-amber-600",
-//       bgLight: "bg-amber-50",
-//       quote: "text-amber-100",
-//     },
-//     {
-//       bg: "from-indigo-500 to-indigo-300",
-//       text: "text-indigo-600",
-//       bgLight: "bg-indigo-50",
-//       quote: "text-indigo-100",
-//     },
-//   ];
-
-//   const track = document.getElementById("testimonial-track");
-//   const dotsContainer = document.getElementById("testimonial-dots");
-//   const testimonials = document.querySelectorAll(".w-full.md\\:w-1\\/2");
-//   let currentIndex = 0;
-//   let cardWidth = testimonials[0].offsetWidth;
-//   const visibleTestimonials = 2;
-//   let isReversed = false;
-//   let autoScrollInterval;
-
-//   // Apply dynamic colors to testimonials
-//   function applyTestimonialColors() {
-//     testimonials.forEach((testimonial, index) => {
-//       const colorIndex = index % colorPalette.length;
-//       const colors = colorPalette[colorIndex];
-
-//       // Update avatar gradient
-//       const avatar = testimonial.querySelector(".rounded-full");
-//       avatar.className = avatar.className.replace(
-//         /from-\w+-\d+ to-\w+-\d+/,
-//         colors.bg
-//       );
-
-//       // Update project tag
-//       const projectTag = testimonial.querySelector(".text-xs.rounded-full");
-//       projectTag.classList.remove(
-//         "bg-blue-50",
-//         "text-blue-600",
-//         "bg-purple-50",
-//         "text-purple-600",
-//         "bg-teal-50",
-//         "text-teal-600"
-//       );
-//       projectTag.classList.add(colors.bgLight, colors.text);
-
-//       // Update quote icon
-//       const quoteIcon = testimonial.querySelector(".fa-quote-right");
-//       quoteIcon.classList.remove(
-//         "text-blue-100",
-//         "text-purple-100",
-//         "text-teal-100",
-//         "text-amber-100"
-//       );
-//       quoteIcon.classList.add(colors.quote);
-//     });
-//   }
-
-//   // Calculate number of dots needed
-//   const dotCount = Math.max(1, testimonials.length - visibleTestimonials + 1);
-
-//   // Create dots dynamically
-//   function createDots() {
-//     console.log("create dot function");
-//     dotsContainer.innerHTML = "";
-
-//     for (let i = 0; i < dotCount; i++) {
-//       const dot = document.createElement("button");
-//       dot.className = `testimonial-dot w-3 h-3 rounded-full focus:outline-none ${
-//         i === 0 ? "bg-blue-600" : "bg-gray-300"
-//       }`;
-//       dot.dataset.index = i;
-//       dotsContainer.appendChild(dot);
-//     }
-//   }
-
-//   function updateCarousel() {
-//     track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-//     updateDots();
-//   }
-
-//   function updateDots() {
-//     const dots = document.querySelectorAll(".testimonial-dot");
-//     const activeDotIndex = Math.min(currentIndex, dotCount - 1);
-
-//     dots.forEach((dot, index) => {
-//       dot.classList.toggle("bg-blue-600", index === activeDotIndex);
-//       dot.classList.toggle("bg-gray-300", index !== activeDotIndex);
-//     });
-//   }
-
-//   function moveNext() {
-//     if (!isReversed) {
-//       if (currentIndex >= testimonials.length - visibleTestimonials) {
-//         isReversed = true;
-//         currentIndex--;
-//       } else {
-//         currentIndex++;
-//       }
-//     } else {
-//       if (currentIndex <= 0) {
-//         isReversed = false;
-//         currentIndex++;
-//       } else {
-//         currentIndex--;
-//       }
-//     }
-//     updateCarousel();
-//   }
-
-//   function handleDotClick(e) {
-//     if (e.target.classList.contains("testimonial-dot")) {
-//       currentIndex = parseInt(e.target.dataset.index);
-//       isReversed = false;
-//       updateCarousel();
-//       resetAutoScroll();
-//     }
-//   }
-
-//   function startAutoScroll() {
-//     autoScrollInterval = setInterval(moveNext, 5000);
-//   }
-
-//   function resetAutoScroll() {
-//     clearInterval(autoScrollInterval);
-//     startAutoScroll();
-//   }
-
-//   // Initialize
-//   applyTestimonialColors();
-//   createDots();
-//   updateCarousel();
-//   startAutoScroll();
-
-//   // Event delegation for dots
-//   dotsContainer.addEventListener("click", handleDotClick);
-
-//   // Pause on hover
-//   track.addEventListener("mouseenter", () => {
-//     clearInterval(autoScrollInterval);
-//   });
-
-//   track.addEventListener("mouseleave", () => {
-//     startAutoScroll();
-//   });
-
-//   // Handle window resize
-//   window.addEventListener("resize", () => {
-//     cardWidth = testimonials[0].offsetWidth;
-//     updateCarousel();
-//   });
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
   // Color palette for testimonials
@@ -571,71 +379,71 @@ function openGallery(projectId) {
 
   const projectImages = {
     erp: [
-      "./images/erp/dashoboard.png",
-      "./images/erp/attribute-tab.png",
-      "./images/erp/audit-log.png",
-      "./images/erp/customer-form.png",
-      "./images/erp/inventory-form.png",
-      "./images/erp/inventory-table.png",
-      "./images/erp/purchase-list.png",
-      "./images/erp/report-filter.png",
-      "./images/erp/sale-order-form.png",
-      "./images/erp/search-filter.png",
-      "./images/erp/sidebar-1.png",
-      "./images/erp/sidebar-3.png",
-      "./images/erp/subcategory-form.png",
-      "./images/erp/supplier-form.png",
-      "./images/erp/variance-tab.png",
+      "./images/erp/dashoboard.webp",
+      "./images/erp/attribute-tab.webp",
+      "./images/erp/audit-log.webp",
+      "./images/erp/customer-form.webp",
+      "./images/erp/inventory-form.webp",
+      "./images/erp/inventory-table.webp",
+      "./images/erp/purchase-list.webp",
+      "./images/erp/report-filter.webp",
+      "./images/erp/sale-order-form.webp",
+      "./images/erp/search-filter.webp",
+      "./images/erp/sidebar-1.webp",
+      "./images/erp/sidebar-3.webp",
+      "./images/erp/subcategory-form.webp",
+      "./images/erp/supplier-form.webp",
+      "./images/erp/variance-tab.webp",
     ],
     admit: [
-      "./images/admitpath/pic-1.png",
-      "./images/admitpath/pic-2.png",
-      "./images/admitpath/pic-3.png",
-      "./images/admitpath/pic-4.png",
-      "./images/admitpath/pic-5.png",
-      "./images/admitpath/pic-6.png",
-      "./images/admitpath/pic-7.png",
-      "./images/admitpath/pic-8.png",
-      "./images/admitpath/pic-9.png",
-      "./images/admitpath/pic-10.png",
-      "./images/admitpath/pic-11.png",
+      "./images/admitpath/pic-1.webp",
+      "./images/admitpath/pic-2.webp",
+      "./images/admitpath/pic-3.webp",
+      "./images/admitpath/pic-4.webp",
+      "./images/admitpath/pic-5.webp",
+      "./images/admitpath/pic-6.webp",
+      "./images/admitpath/pic-7.webp",
+      "./images/admitpath/pic-8.webp",
+      "./images/admitpath/pic-9.webp",
+      "./images/admitpath/pic-10.webp",
+      "./images/admitpath/pic-11.webp",
     ],
     wowconstruction: [
-      "./images/wowconstruction/wow-1.png",
-      "./images/wowconstruction/wow-2.png",
-      "./images/wowconstruction/wow-3.png",
-      "./images/wowconstruction/wow-4.png",
-      "./images/wowconstruction/wow-5.png",
-      "./images/wowconstruction/wow-6.png",
-      "./images/wowconstruction/wow-7.png",
-      "./images/wowconstruction/wow-8.png",
-      "./images/wowconstruction/wow-9.png",
-      "./images/wowconstruction/wow-10.png",
-      "./images/wowconstruction/wow-11.png",
-      "./images/wowconstruction/wow-12.png",
-      "./images/wowconstruction/wow-13.png",
-      "./images/wowconstruction/wow-14.png",
-      "./images/wowconstruction/wow-15.png",
-      "./images/wowconstruction/wow-16.png",
-      "./images/wowconstruction/wow-17.png",
-      "./images/wowconstruction/wow-18.png",
-      "./images/wowconstruction/wow-19.png",
-      "./images/wowconstruction/wow-20.png",
-      "./images/wowconstruction/wow-21.png",
+      "./images/wowconstruction/wow-1.webp",
+      "./images/wowconstruction/wow-2.webp",
+      "./images/wowconstruction/wow-3.webp",
+      "./images/wowconstruction/wow-4.webp",
+      "./images/wowconstruction/wow-5.webp",
+      "./images/wowconstruction/wow-6.webp",
+      "./images/wowconstruction/wow-7.webp",
+      "./images/wowconstruction/wow-8.webp",
+      "./images/wowconstruction/wow-9.webp",
+      "./images/wowconstruction/wow-10.webp",
+      "./images/wowconstruction/wow-11.webp",
+      "./images/wowconstruction/wow-12.webp",
+      "./images/wowconstruction/wow-13.webp",
+      "./images/wowconstruction/wow-14.webp",
+      "./images/wowconstruction/wow-15.webp",
+      "./images/wowconstruction/wow-16.webp",
+      "./images/wowconstruction/wow-17.webp",
+      "./images/wowconstruction/wow-18.webp",
+      "./images/wowconstruction/wow-19.webp",
+      "./images/wowconstruction/wow-20.webp",
+      "./images/wowconstruction/wow-21.webp",
     ],
     firestarter: [
-      "./images/firestarter/firestarter-01-home-hero.png",
-      "./images/firestarter/firestarter-02-home-latest-blog.png",
-      "./images/firestarter/firestarter-03-home-services.png",
-      "./images/firestarter/firestarter-04-home-tools-resources.png",
-      "./images/firestarter/firestarter-05-coast-calculator-main.png",
-      "./images/firestarter/firestarter-06-coast-calculator-features.png",
-      "./images/firestarter/firestarter-07-coast-calculator-explainer.png",
-      "./images/firestarter/firestarter-08-coast-calculator-math.png",
-      "./images/firestarter/firestarter-09-about-hero.png",
-      "./images/firestarter/firestarter-10-about-story.png",
-      "./images/firestarter/firestarter-11-about-beliefs.png",
-      "./images/firestarter/firestarter-12-about-testimonials.png",
+      "./images/firestarter/firestarter-01-home-hero.webp",
+      "./images/firestarter/firestarter-02-home-latest-blog.webp",
+      "./images/firestarter/firestarter-03-home-services.webp",
+      "./images/firestarter/firestarter-04-home-tools-resources.webp",
+      "./images/firestarter/firestarter-05-coast-calculator-main.webp",
+      "./images/firestarter/firestarter-06-coast-calculator-features.webp",
+      "./images/firestarter/firestarter-07-coast-calculator-explainer.webp",
+      "./images/firestarter/firestarter-08-coast-calculator-math.webp",
+      "./images/firestarter/firestarter-09-about-hero.webp",
+      "./images/firestarter/firestarter-10-about-story.webp",
+      "./images/firestarter/firestarter-11-about-beliefs.webp",
+      "./images/firestarter/firestarter-12-about-testimonials.webp",
     ],
   };
 

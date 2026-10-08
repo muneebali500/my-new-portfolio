@@ -86,22 +86,24 @@ body {
   backdrop-filter: blur(20px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1),
+  box-shadow:
+    0 10px 30px rgba(67, 97, 238, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.8) inset;
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 1;
 }
 
 .glass-card:hover {
   transform: perspective(1000px) rotateX(0) rotateY(0) translateZ(30px);
-  box-shadow: 0 15px 40px rgba(67, 97, 238, 0.2),
+  box-shadow:
+    0 15px 40px rgba(67, 97, 238, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.9) inset;
 }
 
-.glass-card::before {
+/* .glass-card::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -116,7 +118,7 @@ body {
   transform: rotate(45deg);
   animation: shine 6s linear infinite;
   z-index: -1;
-}
+} */
 
 @keyframes shine {
   0% {
@@ -139,7 +141,8 @@ body {
   justify-content: center;
   font-size: 2rem;
   color: var(--primary);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.9) inset;
   transform-style: preserve-3d;
   animation: float-element 8s infinite ease-in-out;
@@ -178,7 +181,8 @@ body {
   letter-spacing: 1px;
   transform-style: preserve-3d;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4),
+  box-shadow:
+    0 5px 15px rgba(67, 97, 238, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.3) inset;
 }
 
@@ -199,7 +203,8 @@ body {
 
 .btn-3d:hover {
   transform: translateY(-5px) translateZ(5px);
-  box-shadow: 0 10px 25px rgba(67, 97, 238, 0.6),
+  box-shadow:
+    0 10px 25px rgba(67, 97, 238, 0.6),
     0 0 0 1px rgba(255, 255, 255, 0.4) inset;
 }
 
@@ -306,7 +311,9 @@ body {
 .fade-in {
   opacity: 0;
   transform: translateY(20px) translateZ(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .fade-in.visible {
@@ -318,7 +325,9 @@ body {
 .flip-in {
   opacity: 0;
   transform: perspective(1000px) rotateY(20deg);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
 }
 
 .flip-in.visible {
@@ -329,7 +338,9 @@ body {
 .rotate-in {
   opacity: 0;
   transform: rotate(-5deg);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
 }
 
 .rotate-in.visible {
@@ -341,13 +352,17 @@ body {
 .slide-in-left {
   opacity: 0;
   transform: translateX(-30px) translateZ(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .slide-in-right {
   opacity: 0;
   transform: translateX(30px) translateZ(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .slide-in-left.visible,
